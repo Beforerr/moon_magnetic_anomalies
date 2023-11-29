@@ -1,0 +1,80 @@
+% !TeX root = ../main.tex
+
+\chapter{Numerical method}
+
+Benefiting from the latest advances in high-performance computing, plasma simulation has reached a stage where it can be a highly valuable tool for comparing results with satellite observations, guiding theory and making predictions of space plasma phenomena. This chapter provides an introduction to computer simulation techniques in space plasma physics and give the context to use kinetic simulation to modelling the solar wind interactions with lunar magnetic anomalies.
+    
+Studying the evolution of charged particles, i.e. plasma, in electromagnetic fields may become complex as the particles create their own electromagnetic fields besides the external fields they are living in. Moreover, the various plasma regimes encompass a wide space of plasma parameters and plasma interactions range from microscopic to global scales. This multi-scale nature adds additional computation complexity which restrict the time and space domain of simulation domains. In space plasma communities, three popular approaches are magnetohydrodynamic (MHD), hybrid or kinetic plasma solvers. The kinetic approach is the most fundamental one, and one can derive other approach based on kinetic assumption. However, kinetic modelling is also the most computationally approach and even with present day supercomputers it needs serious consideration of the computation resources. All these plasma solvers comes with their own implicit assumptions, region of applicability, advantages and disadvantages when studying solar system plasma interactions.
+
+\section{Magnetohydrodynamics}
+
+The MHD approach represents all particle species by fluid and it describes the macroscopic low-frequency behavior of electrically conducting fluids such as plasmas under the influence of electromagnetic forces. This approach tremendously reduces computation costs and allows global modelling of the entire coupled solar wind-planet system. For this reason, it is often used to make prediction of space weather given the input of the realistic solar activity.
+
+The simplest form of MHD is ideal MHD when the resistivity is negligible. In principle, the partial differential equations of ideal MHD and other MHD forms can be derived from Boltzmann's equation ignoring small time scales and length scales like the Debye length or the gyro-radii of the charged particles. Here the ideal MHD equations are given for completeness, which just describe the conservation of mass, momentum and energy in fluid form together with the evolution of the magnetic field. 
+
+Continuity equation: $$\frac{\partial \rho}{\partial t}+\nabla \cdot \rho \boldsymbol{u}=0$$
+
+Momentum equation: $$\frac{\partial \rho \boldsymbol{u}}{\partial t}+\nabla \cdot(\rho \boldsymbol{u u})=\boldsymbol{J} \times \boldsymbol{B}-\nabla p$$
+
+Energy equation: $$\frac{\partial \mathcal{E}}{\partial t}+\nabla \cdot(\mathcal{E} \boldsymbol{u})=-p \nabla \cdot \boldsymbol{u}$$
+
+Induction equation: $$\frac{\partial \boldsymbol{B}}{\partial t}+\nabla \times \boldsymbol{E}=0$$
+
+Solenoidal condition: $$\nabla \cdot \boldsymbol{B}=0$$
+
+The current density $J$ and electric field $E$ are intermediate variables and can be expressed in function of the bulk plasma velocity $\boldsymbol{u}$ and the magnetic field $\boldsymbol{B}$ as follows: $$J = ∇ \times B/μ_0$$ and $$E = -u \times B$$.
+
+There are some underlying assumptions in the MHD models which given below. The validity of the assumptions needs to be hold or otherwise MHD models will give unphysical simulation results.
+
+(1). The electron and ion densities are assumed equal and, hence, a quasineutrality condition. This limits the ideal MHD model to spatial scales larger than the Debye length.
+
+(2). Electrons are much lighter than ions and are therefore often considered massless. Ions thus carry the mass and as a consequence (the electron plasma frequency and electron gyrofrequency have now zeros in their denominators) the electron temporal and spatial scales are removed from the physical description, making the ion skin depth the viable length scale.
+
+(3). Assuming an isotropic pressure, i.e., a collisional plasma with frequent inter-particle interactions, rather than a tensor, finite gyroradii effects are lost.
+
+(4). When deriving the ideal MHD equation a Maxwellian distribution is assumed, or in other words, we expect a plasma close to local thermodynamic equilibrium.
+
+
+\section{Hybrid approach}
+
+Following MHD approaches, one nature thought is the hybrid modelling, in which the ions are treated kinetically and the electrons are still assumed to inertia-less and quasi-neutral fluid. This approach can be used to model phenomena on ion gyro-radius and inertial scales with the advantage of computation speed than the full particle simulations while gives a more vivid picture of plasma physics than magnetohydrodynamic simulations.
+
+Hybrid models have been successfully applied to study the interaction between the solar wind and the Moon. \citep{jarvinenVerticalElectricFields2014} suggest that electric potentials can be formed by simply decoupling the ion and electron motion without the need to introduce charge separation effect, using a 3-D quasi-neutral hybrid simulation.
+
+However, ignoring the electron scales cannot always be justified. In \cite{lapentaContactDiscontinuitiesCollisionless1996} paper, they compared the full kinetic and hybrid simulation in the case of contact discontinuities and implied that it is unlikely to observe contact discontinuities when electron thermal transport becomes significant in their kinetic simulation. Electron kinetics may play a important role on a larger scale, leading to a different evolution of the plasma. \cite{winskeHybridSimulationCodes2003} give a tutorial and review the past, present and future of the hybrid simulation of the hybrid approach with a focus on space physics, interesting readers may refer to their publication for more details.
+
+
+\section{Full-kinetic approach}
+
+Kinetic theory describes the most microscopic behavior of plasma. Theoretically, we can use the exact microscopic description: write down Maxwell's set of equations and Newton's law $F=ma$ for all the particles, calculate the forces between particles, update their positions and velocities and finally get their trajectories containing all the physical phenomena. Such a description is exact with no approximation. And one famous quote said "Give me the initial data on the particles and I will predict the future of the universe." However, in any realistic macroscopic system, the number of particles may be a terrifying number: storing the big data for something like $10^{10}$ particles is a nightmare, not to say numerically solving their evolution. The number of operations to computer individual interactions grow quadratically with the number of particles. In short, such exact description is just infeasible in practice to simulate plasma even with advanced efficient algorithms.
+
+Applying concepts like ensembles in statistical physics, we step into kinetic theory which describe the evolution of sampled finite-size macro-particles. Macro-particles representing a large amount of real particles average out the microscopic information in the exact theory and only interact via the averaged fields. Vlasov equation and Boltzmann equation are examples of the statistical kinetic equations. Though the precise information about individual particles is lost in this modeling, the kinetic theory still records the motion of particles and most importantly their velocity distributions. In this sense, it is still a kinetic approach. This description belongs to the type of the particle-mesh model in particle simulation as it treats forces as a field quantity and approximate it on a mesh (other type includes particle-particle method and particle-particle-particle-mesh method, see \cite{verboncoeurParticleSimulationPlasmas2005} for detailed explanation).
+
+\subsection{Particle in cell method}
+
+One particular method to numerically solve the partial differential equation in kinetic theory is the particle-in-cell (PIC) method where individual particles are tracked in continuous phase space in Lagrangian coordinates and moments of the distribution such as densities and currents are computed simultaneously on Eulerian mesh points. PIC methods were invented in the 1950s \citep{birdsallPlasmaPhysicsComputer1985} and have gone a long way since then.
+
+Basically, the PIC method includes the following procedures: integration of the equations of motion; interpolation of charge and current source terms to the field mesh; computation of the fields on mesh points; interpolation of the fields from the mesh to the particle locations. Take the collisionless plasmas for example, the statistical equations to describe them is the Vlasov-Maxwell system of equations. Different species of particles are described by their respective distribution functions $f_s(t,x,p)$ satisfying 
+
+
+$$\left(\partial_{t}+\frac{\mathbf{p}}{m_{s} \gamma} \cdot \nabla+\mathbf{F}_{L} \cdot \nabla_{\mathbf{p}}\right) f_{s}=0$$
+
+where $s$ denotes a given species consisting of particles of charge $q_s$, mass $m_s$, and $x$ and $p$ denote the position and momentum of a phase-space element and $\gamma$ is the (relativistic) Lorentz factor. The lorentz force particles feel is 
+
+$$\mathbf{F}_{L}=q_{s}(\mathbf{E}+\mathbf{v} \times \mathbf{B})$$
+
+where $\mathbf{E}, \mathbf{B}$ are the collective (macroscopic) electric and magnetic fields which still satisfy Maxwell's equations:
+
+$$\begin{aligned} \nabla \cdot \mathbf{B} &=0 \\ \nabla \cdot \mathbf{E} &=\rho \\ \nabla \times \mathbf{B} &=\mathbf{J}+\partial_{t} \mathbf{E} \\ \nabla \times \mathbf{E} &=-\partial_{t} \mathbf{B} \end{aligned}.$$
+
+To close these equations, the plasma in turn modify the collective electric and magnetic fields through their charge and current densities:
+
+$$\begin{aligned} &\rho(t, \mathbf{x})=\sum_{s} q_{s} \int d^{3} p f_{s}(t, \mathbf{x}, \mathbf{p}) \\ &\mathbf{J}(t, \mathbf{x})=\sum_{s} q_{s} \int d^{3} p \mathbf{v} f_{s}(t, \mathbf{x}, \mathbf{p}) \end{aligned} $$
+
+Usually, the Maxwell's equations are solved using the finite difference time domain (FDTD) approach \citep{tafloveComputationalElectromagneticsFiniteDifference2005} where the electromagnetic fields are discretized onto a staggered grid that allows for spatial-centering of the discretized curl operators in Maxwell's equations. And the motion of the quasie-particles are  computed using a (second order) leap-frog integrator like the Boris pusher or Vay pusher for relativistic simulation \citep{vaySimulationBeamsPlasmas2008}.
+
+
+\section{Concluding remarks}
+
+
+In this chapter, we introduce the common numerical methods for space plasma simulation. In the next chapter, we are going to motivate our utilization of PIC plasma solver in the simulation of the Moon-solar wind interaction.

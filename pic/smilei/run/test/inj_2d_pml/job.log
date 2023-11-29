@@ -1,0 +1,699 @@
+Begin Time Mon Apr 25 15:02:11 CST 2022
+Directory is /home/zijin/pic/Moon/run/test/inj_2d_pml
+                    _            _
+  ___           _  | |        _  \ \   Version : 2fd880f-master
+ / __|  _ __   (_) | |  ___  (_)  | |   
+ \__ \ | '  \   _  | | / -_)  _   | |
+ |___/ |_|_|_| |_| |_| \___| |_|  | |  
+                                 /_/    
+ 
+ 
+
+ Reading the simulation parameters
+ --------------------------------------------------------------------------------
+ HDF5 version 1.12.1
+	 Python version 3.9.2
+	 Parsing pyinit.py
+	 Parsing 2fd880f-master
+	 Parsing pyprofiles.py
+	 Parsing test.py
+	 Parsing pycontrol.py
+	 Check for function preprocess()
+	 python preprocess function does not exist
+	 Calling python _smilei_check
+	 Calling python _prepare_checkpoint_dir
+	 Calling python _keep_python_running() :
+	[WARNING] Patches distribution: hilbertian
+	[WARNING] simulation_time has been redefined from 1070.687350 to 1070.685862 to match timestep.
+ 
+
+ Geometry: 2Dcartesian
+ --------------------------------------------------------------------------------
+	 Interpolation order : 2
+	 Maxwell solver : Yee
+	 simulation duration = 1070.685862,   total number of iterations = 652850
+	 timestep = 0.001640 = 	[ERROR](0) src/Params/OpenPMDparams.cpp	[ERROR](	[ERROR](	[ERROR](0.950000 x CFL,   time resolution = 609.749342
+	[ERROR](	[ERROR](	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+	 	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+:106 (OpenPMDparams)  impossible boundary condition 
+0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+Grid length: 0.625, 1.25
+0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+OpenPMDparams)  impossible boundary condition 
+	 Cell length: 0.00244141, 0.00244141, 0
+	 Number of cells: 256, 512
+	 Spatial resolution: 409.6, 409.6
+ 
+
+ Electromagnetic boundary conditions
+ --------------------------------------------------------------------------------
+	 xmin PML
+	 xmax PML
+	 ymin PML
+	 ymax PML
+ 
+
+ Vectorization: 
+ --------------------------------------------------------------------------------
+	 Mode: off
+	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+	[ERROR](0) src/Params/OpenPMDparams.cpp:106 (OpenPMDparams)  impossible boundary condition 
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+watf? exit
+End Time Mon Apr 25 15:02:15 CST 2022
+Begin Time Mon Apr 25 15:40:56 CST 2022
+Directory is /home/zijin/pic/Moon/run/test/inj_2d_pml
+                    _            _
+  ___           _  | |        _  \ \   Version : d021d9e-master
+ / __|  _ __   (_) | |  ___  (_)  | |   
+ \__ \ | '  \   _  | | / -_)  _   | |
+ |___/ |_|_|_| |_| |_| \___| |_|  | |  
+                                 /_/    
+ 
+ 
+
+ Reading the simulation parameters
+ --------------------------------------------------------------------------------
+ HDF5 version 1.12.1
+ Python version 3.9.2
+	 Parsing pyinit.py
+	 Parsing d021d9e-master
+	 Parsing pyprofiles.py
+	 Parsing test.py
+	 Parsing pycontrol.py
+	 Check for function preprocess()
+	 python preprocess function does not exist
+	 Calling python _smilei_check
+	 Calling python _prepare_checkpoint_dir
+	 Calling python _keep_python_running() :
+[;33m
+[WARNING](0) src/Params/Params.cpp:656 (Params) Patches distribution: hilbertian[0m
+[;33m
+[WARNING](0) src/Params/Params.cpp:1049 (compute) simulation_time has been redefined from 1070.687350 to 1070.685862 to match timestep.[0m
+ 
+
+ Geometry: 2Dcartesian
+ --------------------------------------------------------------------------------
+	 Interpolation order : 2
+	 Maxwell solver : Yee
+	 simulation duration = 1070.685862,   total number of iterations = 652850
+	 timestep = 0.001640 = 0.950000 x CFL,   time resolution = 609.749342
+	 Grid length: 0.625, 1.25
+	 Cell length: 0.00244141, 0.00244141, 0
+	 Number of cells: 256, 512
+	 Spatial resolution: 409.6, 409.6
+ 
+
+ Electromagnetic boundary conditions
+ --------------------------------------------------------------------------------
+	 xmin PML
+	 xmax PML
+	 ymin PML
+	 ymax PML
+ 
+
+ Vectorization: 
+ --------------------------------------------------------------------------------
+	 Mode: off
+ 
+
+ Initializing MPI
+ --------------------------------------------------------------------------------
+ 2D built-in profile `constant` (value: 32.000000)
+ 2D built-in profile `constant` (value: 32.000000)
+	 MPI_THREAD_MULTIPLE enabled
+	 Number of MPI processes: 16
+	 Number of threads per MPI process : 24
+ 
+	 Number of patches: 32 x 64
+	 Number of cells in one patch: 8 x 8
+	 Dynamic load balancing: never
+ 
+
+ Initializing the restart environment
+ --------------------------------------------------------------------------------
+	 Code will dump after 652850 steps
+	 Code will exit after dump
+ 
+ 
+
+ Initializing species
+ --------------------------------------------------------------------------------
+	 
+	 Creating Species #0: solar_electron
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove
+		 > Density profile: 2D built-in profile `constant` (value: 0.000000)
+	 
+	 Creating Species #1: solar_proton
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove
+		 > Density profile: 2D built-in profile `constant` (value: 0.000000)
+ 
+
+ Initializing External fields
+ --------------------------------------------------------------------------------
+	 External field By: 2D built-in profile `constant` (value: 0.228805)
+ 
+
+ Initializing particle injectors
+ --------------------------------------------------------------------------------
+	 
+	 Creating Injector: injector_solar_electron
+		 > Associated species: solar_electron (of index 0)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 2D built-in profile `constant` (value: 32.000000).
+	 
+	 Creating Injector: injector_solar_proton
+		 > Associated species: solar_proton (of index 1)
+		 > Injection from from the side: xmax
+		 > Position initialization: injector_solar_electron
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 2D built-in profile `constant` (value: 32.000000).
+ 
+
+ Initializing Patches
+ --------------------------------------------------------------------------------
+	 First patch created
+		 Approximately 10% of patches created
+		 Approximately 20% of patches created
+		 Approximately 30% of patches created
+		 Approximately 40% of patches created
+		 Approximately 50% of patches created
+		 Approximately 60% of patches created
+		 Approximately 70% of patches created
+		 Approximately 80% of patches created
+		 Approximately 90% of patches created
+	 All patches created
+ 
+
+ Creating Diagnostics, antennas, and external fields
+ --------------------------------------------------------------------------------
+	 Created ParticleBinning #0: species solar_electron
+		 Axis x from 0 to 0.625 in 256 steps
+		 Axis y from 0.611572 to 0.638428 in 11 steps
+		 Axis vx from -0.0596881 to 0.0596881 in 100 steps
+	 Created ParticleBinning #1: species solar_electron
+		 Axis x from 0 to 0.625 in 256 steps
+		 Axis y from 0.611572 to 0.638428 in 11 steps
+		 Axis vy from -0.0596881 to 0.0596881 in 100 steps
+	 Created ParticleBinning #2: species solar_electron
+		 Axis x from 0 to 0.625 in 256 steps
+		 Axis y from 0.611572 to 0.638428 in 11 steps
+		 Axis vz from -0.0596881 to 0.0596881 in 100 steps
+	 Created ParticleBinning #3: species solar_proton
+		 Axis x from 0 to 0.625 in 256 steps
+		 Axis y from 0.611572 to 0.638428 in 11 steps
+		 Axis vx from -0.00253317 to 0.00253317 in 100 steps
+	 Created ParticleBinning #4: species solar_proton
+		 Axis x from 0 to 0.625 in 256 steps
+		 Axis y from 0.611572 to 0.638428 in 11 steps
+		 Axis vy from -0.00253317 to 0.00253317 in 100 steps
+	 Created ParticleBinning #5: species solar_proton
+		 Axis x from 0 to 0.625 in 256 steps
+		 Axis y from 0.611572 to 0.638428 in 11 steps
+		 Axis vz from -0.00253317 to 0.00253317 in 100 steps
+	 Diagnostic Fields #0  :
+		 Ex Ey Ez Bx By Bz Bx_m By_m Bz_m Jx Jy Jz Rho Jx_solar_electron Jy_solar_electron Jz_solar_electron Rho_solar_electron Jx_solar_proton Jy_solar_proton Jz_solar_proton Rho_solar_proton 
+	 Created TrackParticles #0: species solar_electron
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 2D built-in profile `constant` (value: 32.000000)
+	 Created TrackParticles #1: species solar_proton
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 2D built-in profile `constant` (value: 32.000000)
+ 
+
+ finalize MPI
+ --------------------------------------------------------------------------------
+	 Done creating diagnostics, antennas, and external fields
+ 
+
+ Minimum memory consumption (does not include all temporary buffers)
+ --------------------------------------------------------------------------------
+              Particles: Master 0 MB;   Max 0 MB;   Global 0 GB
+                 Fields: Master 3 MB;   Max 3 MB;   Global 0.0542 GB
+            scalars.txt: Master 0 MB;   Max 0 MB;   Global 0 GB
+    ParticleBinning0.h5: Master 2 MB;   Max 2 MB;   Global 0.0336 GB
+    ParticleBinning1.h5: Master 2 MB;   Max 2 MB;   Global 0.0336 GB
+    ParticleBinning2.h5: Master 2 MB;   Max 2 MB;   Global 0.0336 GB
+    ParticleBinning3.h5: Master 2 MB;   Max 2 MB;   Global 0.0336 GB
+    ParticleBinning4.h5: Master 2 MB;   Max 2 MB;   Global 0.0336 GB
+    ParticleBinning5.h5: Master 2 MB;   Max 2 MB;   Global 0.0336 GB
+             Fields0.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_electron.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_proton.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ 
+
+ Initial fields setup
+ --------------------------------------------------------------------------------
+	 Applying external fields at time t = 0
+	 Applying prescribed fields at time t = 0
+	 Applying antennas at time t = 0
+ 
+
+ Open files & initialize diagnostics
+ --------------------------------------------------------------------------------
+ 
+
+ Running diags at time t = 0
+ --------------------------------------------------------------------------------
+ 
+
+ Species creation summary
+ --------------------------------------------------------------------------------
+		 Species 0 (solar_electron) created with 0 particles
+		 Species 1 (solar_proton) created with 0 particles
+ 
+
+ Expected disk usage (approximate)
+ --------------------------------------------------------------------------------
+	 WARNING: disk usage by non-uniform particles maybe strongly underestimated,
+	    especially when particles are created at runtime (ionization, pair generation, etc.)
+	 
+	 Expected disk usage for diagnostics:
+		 File Fields0.h5: 211.50 M
+		 File TrackParticlesDisordered_solar_electron.h5: 70.05 M
+		 File TrackParticlesDisordered_solar_proton.h5: 70.05 M
+		 File scalars.txt: 508.71 K
+		 File ParticleBinning0.h5: 21.49 M
+		 File ParticleBinning1.h5: 21.49 M
+		 File ParticleBinning2.h5: 21.49 M
+		 File ParticleBinning3.h5: 21.49 M
+		 File ParticleBinning4.h5: 21.49 M
+		 File ParticleBinning5.h5: 21.49 M
+	 Total disk usage for diagnostics: 481.05 M
+	 
+	 Expected disk usage for each checkpoint:
+		 For fields: 23.77 M
+ 2D built-in profile `constant` (value: 32.000000)
+ 2D built-in profile `constant` (value: 32.000000)
+		 For particles: 32.00 K
+		 For diagnostics: 0 bytes
+	 Total disk usage for one checkpoint: 23.80 M
+ 
+
+ Keeping or closing the python runtime environment
+ --------------------------------------------------------------------------------
+	 Checking for cleanup() function:
+	 python cleanup function does not exist
+	 Keeping Python interpreter alive
+ 
+
+ Time-Loop started: number of time-steps n_time = 652850
+ --------------------------------------------------------------------------------
+[;33m
+[WARNING](0) src/Params/Params.cpp:1381 (print_timestep_headers) The following `push time` assumes a global number of 384 cores (hyperthreading is unknown)[0m
+        timestep       sim time   cpu time [s]   (    diff [s] )   push time [ns]
+    65285/652850     1.0707e+02     5.2412e+02   (  5.2412e+02 )             930 
+   130570/652850     2.1414e+02     1.3138e+03   (  7.8972e+02 )             692 
+   195855/652850     3.2121e+02     2.3255e+03   (  1.0116e+03 )             606 
+   261140/652850     4.2828e+02     3.4839e+03   (  1.1584e+03 )             556 
+   326425/652850     5.3534e+02     4.7129e+03   (  1.2290e+03 )             533 
+   391710/652850     6.4241e+02     5.9119e+03   (  1.1991e+03 )             511 
+   456995/652850     7.4948e+02     7.0061e+03   (  1.0941e+03 )             487 
+   522280/652850     8.5655e+02     7.9772e+03   (  9.7109e+02 )             464 
+   587565/652850     9.6362e+02     8.9020e+03   (  9.2485e+02 )             485 
+ Step 652850 : DUMP fields and particles 0
+   652850/652850     1.0707e+03     9.9192e+03   (  1.0172e+03 )             586 
+ 
+
+ End time loop, time dual = 1.0707e+03
+ --------------------------------------------------------------------------------
+ 
+
+ Time profiling : (print time > 0.001%)
+ --------------------------------------------------------------------------------
+ Time_in_time_loop	9.9192e+03	7.5003e+01% coverage
+ 	           Particles	4.105243e+03	4.1e+01%
+ 	             Maxwell	1.980103e+01	    <1%
+ 	         Diagnostics	3.330812e+02	3.4e+00%
+ 	          Collisions	1.505166e+01	    <1%
+ 	      Sync Particles	1.727912e+03	1.7e+01%
+ 	         Sync Fields	2.563351e+02	2.6e+00%
+ 	      Sync Densities	1.806126e+03	1.8e+01%
+ 	        Part Merging	1.058093e+01	    <1%
+ 	      Part Injection	5.766884e+02	5.8e+00%
+ 
+	 Printed times are averaged per MPI process
+ 		 See advanced metrics in profil.txt
+ 
+	Diagnostics profile :
+ 		         scalars.txt	2.5e+01
+ 		 ParticleBinning0.h5	6.4e+00
+ 		 ParticleBinning1.h5	6.2e+00
+ 		 ParticleBinning2.h5	6.2e+00
+ 		 ParticleBinning3.h5	6.2e+00
+ 		 ParticleBinning4.h5	6.1e+00
+ 		 ParticleBinning5.h5	6.1e+00
+ 		          Fields0.h5	5.4e+00
+ 		TrackParticlesDisordered_solar_electron.h5	1.3e+02
+ 		TrackParticlesDisordered_solar_proton.h5	1.0e+02
+ 
+
+ END
+ --------------------------------------------------------------------------------
+End Time Mon Apr 25 18:26:44 CST 2022
+Begin Time Mon Apr 25 21:47:39 CST 2022
+Directory is /home/zijin/pic/Moon/run/test/inj_2d_pml
+                    _            _
+  ___           _  | |        _  \ \   Version : d021d9e-master
+ / __|  _ __   (_) | |  ___  (_)  | |   
+ \__ \ | '  \   _  | | / -_)  _   | |
+ |___/ |_|_|_| |_| |_| \___| |_|  | |  
+                                 /_/    
+ 
+ 
+
+ Reading the simulation parameters
+ --------------------------------------------------------------------------------
+ HDF5 version 1.12.1
+ Python version 3.9.2
+	 Parsing pyinit.py
+	 Parsing d021d9e-master
+	 Parsing pyprofiles.py
+	 Parsing test.py
+	 Parsing pycontrol.py
+	 Check for function preprocess()
+	 python preprocess function does not exist
+	 Calling python _smilei_check
+	 Calling python _prepare_checkpoint_dir
+	 Calling python _keep_python_running() :
+[;33m
+[WARNING](0) src/Params/Params.cpp:656 (Params) Patches distribution: hilbertian[0m
+[;33m
+[WARNING](0) src/Params/Params.cpp:1049 (compute) simulation_time has been redefined from 1070.687350 to 1070.685862 to match timestep.[0m
+ 
+
+ Geometry: 2Dcartesian
+ --------------------------------------------------------------------------------
+	 Interpolation order : 2
+	 Maxwell solver : Yee
+	 simulation duration = 1070.685862,   total number of iterations = 326425
+	 timestep = 0.003280 = 0.950000 x CFL,   time resolution = 304.874671
+	 Grid length: 0.625, 1.25
+	 Cell length: 0.00488281, 0.00488281, 0
+	 Number of cells: 128, 256
+	 Spatial resolution: 204.8, 204.8
+ 
+
+ Electromagnetic boundary conditions
+ --------------------------------------------------------------------------------
+	 xmin PML
+	 xmax PML
+	 ymin PML
+	 ymax PML
+ 
+
+ Vectorization: 
+ --------------------------------------------------------------------------------
+	 Mode: off
+ 
+
+ Initializing MPI
+ --------------------------------------------------------------------------------
+ 2D built-in profile `constant` (value: 32.000000)
+ 2D built-in profile `constant` (value: 32.000000)
+	 MPI_THREAD_MULTIPLE enabled
+	 Number of MPI processes: 8
+	 Number of threads per MPI process : 24
+ 
+	 Number of patches: 16 x 32
+	 Number of cells in one patch: 8 x 8
+	 Dynamic load balancing: never
+ 
+
+ Initializing the restart environment
+ --------------------------------------------------------------------------------
+	 Code will dump after 326425 steps
+	 Code will exit after dump
+ 
+ 
+
+ Initializing species
+ --------------------------------------------------------------------------------
+	 
+	 Creating Species #0: solar_electron
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove
+		 > Density profile: 2D built-in profile `constant` (value: 1795.352023)
+	 
+	 Creating Species #1: solar_proton
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove
+		 > Density profile: 2D built-in profile `constant` (value: 1795.352023)
+ 
+
+ Initializing External fields
+ --------------------------------------------------------------------------------
+	 External field By: 2D built-in profile `constant` (value: 0.228805)
+ 
+
+ Initializing particle injectors
+ --------------------------------------------------------------------------------
+	 
+	 Creating Injector: injector_solar_electron
+		 > Associated species: solar_electron (of index 0)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 2D built-in profile `constant` (value: 32.000000).
+	 
+	 Creating Injector: injector_solar_proton
+		 > Associated species: solar_proton (of index 1)
+		 > Injection from from the side: xmax
+		 > Position initialization: injector_solar_electron
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 2D built-in profile `constant` (value: 32.000000).
+ 
+
+ Initializing Patches
+ --------------------------------------------------------------------------------
+	 First patch created
+		 Approximately 10% of patches created
+		 Approximately 20% of patches created
+		 Approximately 30% of patches created
+		 Approximately 40% of patches created
+		 Approximately 50% of patches created
+		 Approximately 60% of patches created
+		 Approximately 70% of patches created
+		 Approximately 80% of patches created
+		 Approximately 90% of patches created
+	 All patches created
+ 
+
+ Creating Diagnostics, antennas, and external fields
+ --------------------------------------------------------------------------------
+	 Created ParticleBinning #0: species solar_electron
+		 Axis x from 0 to 0.625 in 128 steps
+		 Axis y from 0.598145 to 0.651855 in 11 steps
+		 Axis vx from -0.0596881 to 0.0596881 in 100 steps
+	 Created ParticleBinning #1: species solar_electron
+		 Axis x from 0 to 0.625 in 128 steps
+		 Axis y from 0.598145 to 0.651855 in 11 steps
+		 Axis vy from -0.0596881 to 0.0596881 in 100 steps
+	 Created ParticleBinning #2: species solar_electron
+		 Axis x from 0 to 0.625 in 128 steps
+		 Axis y from 0.598145 to 0.651855 in 11 steps
+		 Axis vz from -0.0596881 to 0.0596881 in 100 steps
+	 Created ParticleBinning #3: species solar_proton
+		 Axis x from 0 to 0.625 in 128 steps
+		 Axis y from 0.598145 to 0.651855 in 11 steps
+		 Axis vx from -0.00253317 to 0.00253317 in 100 steps
+	 Created ParticleBinning #4: species solar_proton
+		 Axis x from 0 to 0.625 in 128 steps
+		 Axis y from 0.598145 to 0.651855 in 11 steps
+		 Axis vy from -0.00253317 to 0.00253317 in 100 steps
+	 Created ParticleBinning #5: species solar_proton
+		 Axis x from 0 to 0.625 in 128 steps
+		 Axis y from 0.598145 to 0.651855 in 11 steps
+		 Axis vz from -0.00253317 to 0.00253317 in 100 steps
+	 Diagnostic Fields #0  :
+		 Ex Ey Ez Bx By Bz Bx_m By_m Bz_m Jx Jy Jz Rho Jx_solar_electron Jy_solar_electron Jz_solar_electron Rho_solar_electron Jx_solar_proton Jy_solar_proton Jz_solar_proton Rho_solar_proton 
+	 Created TrackParticles #0: species solar_electron
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 2D built-in profile `constant` (value: 32.000000)
+	 Created TrackParticles #1: species solar_proton
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 2D built-in profile `constant` (value: 32.000000)
+ 
+
+ finalize MPI
+ --------------------------------------------------------------------------------
+	 Done creating diagnostics, antennas, and external fields
+ 
+
+ Minimum memory consumption (does not include all temporary buffers)
+ --------------------------------------------------------------------------------
+              Particles: Master 14 MB;   Max 14 MB;   Global 0.113 GB
+                 Fields: Master 1 MB;   Max 1 MB;   Global 0.0135 GB
+            scalars.txt: Master 0 MB;   Max 0 MB;   Global 0 GB
+    ParticleBinning0.h5: Master 1 MB;   Max 1 MB;   Global 0.00839 GB
+    ParticleBinning1.h5: Master 1 MB;   Max 1 MB;   Global 0.00839 GB
+    ParticleBinning2.h5: Master 1 MB;   Max 1 MB;   Global 0.00839 GB
+    ParticleBinning3.h5: Master 1 MB;   Max 1 MB;   Global 0.00839 GB
+    ParticleBinning4.h5: Master 1 MB;   Max 1 MB;   Global 0.00839 GB
+    ParticleBinning5.h5: Master 1 MB;   Max 1 MB;   Global 0.00839 GB
+             Fields0.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_electron.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_proton.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ 
+
+ Initial fields setup
+ --------------------------------------------------------------------------------
+	 Solving Poisson at time t = 0
+ 
+
+ Initializing E field through Poisson solver
+ --------------------------------------------------------------------------------
+	 Poisson solver converged at iteration: 638, relative err is ctrl = 0.937322 x 1e-14
+	 Poisson equation solved. Maximum err = 0.000000 at i= -1
+ Time in Poisson : 0.074191
+	 Applying external fields at time t = 0
+	 Applying prescribed fields at time t = 0
+	 Applying antennas at time t = 0
+ 
+
+ Open files & initialize diagnostics
+ --------------------------------------------------------------------------------
+ 
+
+ Running diags at time t = 0
+ --------------------------------------------------------------------------------
+ 
+
+ Species creation summary
+ --------------------------------------------------------------------------------
+		 Species 0 (solar_electron) created with 1048576 particles
+		 Species 1 (solar_proton) created with 1048576 particles
+ 
+
+ Expected disk usage (approximate)
+ --------------------------------------------------------------------------------
+	 WARNING: disk usage by non-uniform particles maybe strongly underestimated,
+	    especially when particles are created at runtime (ionization, pair generation, etc.)
+	 
+	 Expected disk usage for diagnostics:
+		 File Fields0.h5: 58.72 M
+		 File TrackParticlesDisordered_solar_electron.h5: 204.10 G
+		 File TrackParticlesDisordered_solar_proton.h5: 204.10 G
+		 File scalars.txt: 508.71 K
+		 File ParticleBinning0.h5: 11.82 M
+		 File ParticleBinning1.h5: 11.82 M
+		 File ParticleBinning2.h5: 11.82 M
+		 File ParticleBinning3.h5: 11.82 M
+		 File ParticleBinning4.h5: 11.82 M
+		 File ParticleBinning5.h5: 11.82 M
+	 Total disk usage for diagnostics: 408.32 G
+	 
+	 Expected disk usage for each checkpoint:
+		 For fields: 5.94 M
+ 2D built-in profile `constant` (value: 32.000000)
+ 2D built-in profile `constant` (value: 32.000000)
+		 For particles: 116.01 M
+		 For diagnostics: 0 bytes
+	 Total disk usage for one checkpoint: 121.95 M
+ 
+
+ Keeping or closing the python runtime environment
+ --------------------------------------------------------------------------------
+	 Checking for cleanup() function:
+	 python cleanup function does not exist
+	 Keeping Python interpreter alive
+ 
+
+ Time-Loop started: number of time-steps n_time = 326425
+ --------------------------------------------------------------------------------
+[;33m
+[WARNING](0) src/Params/Params.cpp:1381 (print_timestep_headers) The following `push time` assumes a global number of 192 cores (hyperthreading is unknown)[0m
+        timestep       sim time   cpu time [s]   (    diff [s] )   push time [ns]
+    32642/326425     1.0707e+02     2.5597e+02   (  2.5597e+02 )             597 
+    65284/326425     2.1414e+02     5.5803e+02   (  3.0206e+02 )             616 
+    97926/326425     3.2120e+02     8.8029e+02   (  3.2226e+02 )             605 
+   130568/326425     4.2827e+02     1.2132e+03   (  3.3289e+02 )             590 
+   163210/326425     5.3534e+02     1.5582e+03   (  3.4502e+02 )             587 
+   195852/326425     6.4240e+02     1.8886e+03   (  3.3036e+02 )             562 
+   228494/326425     7.4947e+02     2.1916e+03   (  3.0310e+02 )             541 
+   261136/326425     8.5654e+02     2.4910e+03   (  2.9933e+02 )             580 
+   293778/326425     9.6360e+02     2.7895e+03   (  2.9848e+02 )             631 
+   326420/326425     1.0707e+03     3.0738e+03   (  2.8437e+02 )             653 
+ Step 326425 : DUMP fields and particles 0
+ 
+
+ End time loop, time dual = 1.0707e+03
+ --------------------------------------------------------------------------------
+ 
+
+ Time profiling : (print time > 0.001%)
+ --------------------------------------------------------------------------------
+ Time_in_time_loop	3.0740e+03	7.0176e+01% coverage
+ 	           Particles	1.290850e+03	4.2e+01%
+ 	             Maxwell	6.631626e+00	    <1%
+ 	         Diagnostics	1.245443e+02	4.1e+00%
+ 	          Collisions	6.372045e+00	    <1%
+ 	      Sync Particles	3.558461e+02	1.2e+01%
+ 	         Sync Fields	5.384164e+01	1.8e+00%
+ 	      Sync Densities	5.082476e+02	1.7e+01%
+ 	        Part Merging	3.990558e+00	    <1%
+ 	      Part Injection	2.761949e+02	9.0e+00%
+ 
+	 Printed times are averaged per MPI process
+ 		 See advanced metrics in profil.txt
+ 
+	Diagnostics profile :
+ 		         scalars.txt	1.1e+01
+ 		 ParticleBinning0.h5	3.4e+00
+ 		 ParticleBinning1.h5	3.3e+00
+ 		 ParticleBinning2.h5	3.3e+00
+ 		 ParticleBinning3.h5	3.3e+00
+ 		 ParticleBinning4.h5	3.3e+00
+ 		 ParticleBinning5.h5	3.3e+00
+ 		          Fields0.h5	3.0e+00
+ 		TrackParticlesDisordered_solar_electron.h5	3.7e+01
+ 		TrackParticlesDisordered_solar_proton.h5	3.6e+01
+ 
+
+ END
+ --------------------------------------------------------------------------------
+End Time Mon Apr 25 22:39:06 CST 2022

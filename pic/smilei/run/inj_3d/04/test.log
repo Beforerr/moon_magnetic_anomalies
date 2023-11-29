@@ -1,0 +1,400 @@
+     ----- TEST MODE WITH INTENDED PARTITION 1x1-----
+                    _            _
+  ___           _  | |        _  \ \   Version : ??-??
+ / __|  _ __   (_) | |  ___  (_)  | |   
+ \__ \ | '  \   _  | | / -_)  _   | |
+ |___/ |_|_|_| |_| |_| \___| |_|  | |  
+                                 /_/    
+ 
+ 
+
+ Reading the simulation parameters
+ --------------------------------------------------------------------------------
+ HDF5 version 1.12.2
+ Python version 3.9.12
+	 Parsing pyinit.py
+	 Parsing ??-??
+	 Parsing pyprofiles.py
+	 Parsing test.py
+	 Parsing pycontrol.py
+	 Check for function preprocess()
+	 python preprocess function does not exist
+	 Calling python _smilei_check
+	 Calling python _keep_python_running() :
+[;33m
+[WARNING](0) src/Params/Params.cpp:656 (Params) Patches distribution: hilbertian[0m
+[;33m
+[WARNING](0) src/Params/Params.cpp:1048 (compute) simulation_time has been redefined from 2342.128578 to 2342.126124 to match timestep.[0m
+ 
+
+ Geometry: 3Dcartesian
+ --------------------------------------------------------------------------------
+	 Interpolation order : 2
+	 Maxwell solver : Yee
+	 simulation duration = 2342.126124,   total number of iterations = 415820
+	 timestep = 0.005633 = 0.999000 x CFL,   time resolution = 177.539542
+	 Grid length: 0.625, 1.25, 0.625
+	 Cell length: 0.00976562, 0.00976562, 0.00976562
+	 Number of cells: 64, 128, 64
+	 Spatial resolution: 102.4, 102.4, 102.4
+ 
+
+ Electromagnetic boundary conditions
+ --------------------------------------------------------------------------------
+	 xmin silver-muller, absorbing vector [1, 0, 0]
+	 xmax silver-muller, absorbing vector [-1, -0, -0]
+	 ymin silver-muller, absorbing vector [0, 1, 0]
+	 ymax silver-muller, absorbing vector [-0, -1, -0]
+	 zmin silver-muller, absorbing vector [0, 0, 1]
+	 zmax silver-muller, absorbing vector [-0, -0, -1]
+ 
+
+ Vectorization: 
+ --------------------------------------------------------------------------------
+	 Mode: off
+ 
+
+ Initializing MPI
+ --------------------------------------------------------------------------------
+	 MPI_THREAD_MULTIPLE enabled
+	 Number of MPI processes: 1
+	 Number of threads per MPI process : 1
+ 
+	 Number of patches: 8 x 16 x 8
+	 Number of cells in one patch: 8 x 8 x 8
+	 Dynamic load balancing: never
+ 
+
+ Initializing the restart environment
+ --------------------------------------------------------------------------------
+	 Code will dump after 415820 steps
+	 Code will exit after dump
+ 
+
+ Initializing species
+ --------------------------------------------------------------------------------
+	 
+	 Creating Species #0: solar_electron
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+	 
+	 Creating Species #1: solar_electron_test
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+	 
+	 Creating Species #2: solar_proton
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+	 
+	 Creating Species #3: solar_proton_test
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+ 
+
+ Initializing External fields
+ --------------------------------------------------------------------------------
+	 External field Bx: 3D from file `LMA_fields_input.h5/Bx`
+	 External field By: 3D from file `LMA_fields_input.h5/By`
+	 External field Bz: 3D from file `LMA_fields_input.h5/Bz`
+	 External field By: 3D built-in profile `constant` (value: 0.228805)
+ 
+
+ Initializing particle injectors
+ --------------------------------------------------------------------------------
+	 
+	 Creating Injector: injector_solar_electron
+		 > Associated species: solar_electron (of index 0)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 64.000000).
+	 
+	 Creating Injector: injector_solar_electron_test
+		 > Associated species: solar_electron_test (of index 1)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 1.000000).
+	 
+	 Creating Injector: injector_solar_proton
+		 > Associated species: solar_proton (of index 2)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 64.000000).
+	 
+	 Creating Injector: injector_solar_proton_test
+		 > Associated species: solar_proton_test (of index 3)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 1.000000).
+ 
+
+ Initializing Patches
+ --------------------------------------------------------------------------------
+	 First patch created
+	 All patches created
+ 
+
+ Creating Diagnostics, antennas, and external fields
+ --------------------------------------------------------------------------------
+	 Created ParticleBinning #0: species solar_electron
+		 Axis x from 0.398101 to 0.398101 in 1 steps
+		 Axis y from 0.337233 to 0.337233 in 1 steps
+		 Axis z from 0.0256085 to 0.0256085 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #1: species solar_proton
+		 Axis x from 0.398101 to 0.398101 in 1 steps
+		 Axis y from 0.337233 to 0.337233 in 1 steps
+		 Axis z from 0.0256085 to 0.0256085 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #2: species solar_electron
+		 Axis x from 0.0103298 to 0.0103298 in 1 steps
+		 Axis y from 1.01659 to 1.01659 in 1 steps
+		 Axis z from 0.570472 to 0.570472 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #3: species solar_proton
+		 Axis x from 0.0103298 to 0.0103298 in 1 steps
+		 Axis y from 1.01659 to 1.01659 in 1 steps
+		 Axis z from 0.570472 to 0.570472 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #4: species solar_electron
+		 Axis x from 0.379147 to 0.379147 in 1 steps
+		 Axis y from 0.911871 to 0.911871 in 1 steps
+		 Axis z from 0.339766 to 0.339766 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #5: species solar_proton
+		 Axis x from 0.379147 to 0.379147 in 1 steps
+		 Axis y from 0.911871 to 0.911871 in 1 steps
+		 Axis z from 0.339766 to 0.339766 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #6: species solar_electron
+		 Axis x from 0.58442 to 0.58442 in 1 steps
+		 Axis y from 1.01982 to 1.01982 in 1 steps
+		 Axis z from 0.00171156 to 0.00171156 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #7: species solar_proton
+		 Axis x from 0.58442 to 0.58442 in 1 steps
+		 Axis y from 1.01982 to 1.01982 in 1 steps
+		 Axis z from 0.00171156 to 0.00171156 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #8: species solar_electron
+		 Axis x from 0.535878 to 0.535878 in 1 steps
+		 Axis y from 0.041982 to 0.041982 in 1 steps
+		 Axis z from 0.456035 to 0.456035 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #9: species solar_proton
+		 Axis x from 0.535878 to 0.535878 in 1 steps
+		 Axis y from 0.041982 to 0.041982 in 1 steps
+		 Axis z from 0.456035 to 0.456035 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #10: species solar_electron
+		 Axis x from 0.109785 to 0.109785 in 1 steps
+		 Axis y from 1.07897 to 1.07897 in 1 steps
+		 Axis z from 0.338413 to 0.338413 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #11: species solar_proton
+		 Axis x from 0.109785 to 0.109785 in 1 steps
+		 Axis y from 1.07897 to 1.07897 in 1 steps
+		 Axis z from 0.338413 to 0.338413 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #12: species solar_electron
+		 Axis x from 0.18732 to 0.18732 in 1 steps
+		 Axis y from 0.528359 to 0.528359 in 1 steps
+		 Axis z from 0.0176998 to 0.0176998 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #13: species solar_proton
+		 Axis x from 0.18732 to 0.18732 in 1 steps
+		 Axis y from 0.528359 to 0.528359 in 1 steps
+		 Axis z from 0.0176998 to 0.0176998 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #14: species solar_electron
+		 Axis x from 0.077677 to 0.077677 in 1 steps
+		 Axis y from 0.838281 to 0.838281 in 1 steps
+		 Axis z from 0.404493 to 0.404493 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #15: species solar_proton
+		 Axis x from 0.077677 to 0.077677 in 1 steps
+		 Axis y from 0.838281 to 0.838281 in 1 steps
+		 Axis z from 0.404493 to 0.404493 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #16: species solar_electron
+		 Axis x from 0.384616 to 0.384616 in 1 steps
+		 Axis y from 0.479597 to 0.479597 in 1 steps
+		 Axis z from 0.623256 to 0.623256 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #17: species solar_proton
+		 Axis x from 0.384616 to 0.384616 in 1 steps
+		 Axis y from 0.479597 to 0.479597 in 1 steps
+		 Axis z from 0.623256 to 0.623256 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Diagnostic Fields #0  :
+		 Ex Ey Ez Bx By Bz Bx_m By_m Bz_m Jx Jy Jz Rho Jx_solar_electron Jy_solar_electron Jz_solar_electron Rho_solar_electron Jx_solar_electron_test Jy_solar_electron_test Jz_solar_electron_test Rho_solar_electron_test Jx_solar_proton Jy_solar_proton Jz_solar_proton Rho_solar_proton Jx_solar_proton_test Jy_solar_proton_test Jz_solar_proton_test Rho_solar_proton_test 
+	 Probe diagnostic #0
+		 1 points
+		 origin : 0.398101, 0.337233, 0.0256085
+	 Probe diagnostic #1
+		 1 points
+		 origin : 0.0103298, 1.01659, 0.570472
+	 Probe diagnostic #2
+		 1 points
+		 origin : 0.379147, 0.911871, 0.339766
+	 Probe diagnostic #3
+		 1 points
+		 origin : 0.58442, 1.01982, 0.00171156
+	 Probe diagnostic #4
+		 1 points
+		 origin : 0.535878, 0.041982, 0.456035
+	 Probe diagnostic #5
+		 1 points
+		 origin : 0.109785, 1.07897, 0.338413
+	 Probe diagnostic #6
+		 1 points
+		 origin : 0.18732, 0.528359, 0.0176998
+	 Probe diagnostic #7
+		 1 points
+		 origin : 0.077677, 0.838281, 0.404493
+	 Probe diagnostic #8
+		 1 points
+		 origin : 0.384616, 0.479597, 0.623256
+	 Created TrackParticles #0: species solar_electron
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 64.000000)
+	 Created TrackParticles #1: species solar_electron_test
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 1.000000)
+	 Created TrackParticles #2: species solar_proton
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 64.000000)
+	 Created TrackParticles #3: species solar_proton_test
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 1.000000)
+ 
+
+ finalize MPI
+ --------------------------------------------------------------------------------
+	 Done creating diagnostics, antennas, and external fields
+ 
+
+ Expected disk usage (approximate)
+ --------------------------------------------------------------------------------
+	 WARNING: disk usage by non-uniform particles maybe strongly underestimated,
+	    especially when particles are created at runtime (ionization, pair generation, etc.)
+	 
+	 Expected disk usage for diagnostics:
+		 File Fields0.h5: 363.77 K
+		 File Probes0.h5: 607.64 K
+		 File Probes1.h5: 607.64 K
+		 File Probes2.h5: 607.64 K
+		 File Probes3.h5: 607.64 K
+		 File Probes4.h5: 607.64 K
+		 File Probes5.h5: 607.64 K
+		 File Probes6.h5: 607.64 K
+		 File Probes7.h5: 607.64 K
+		 File Probes8.h5: 607.64 K
+		 File TrackParticlesDisordered_solar_electron.h5: 446.13 M
+		 File TrackParticlesDisordered_solar_electron_test.h5: 446.13 M
+		 File TrackParticlesDisordered_solar_proton.h5: 446.13 M
+		 File TrackParticlesDisordered_solar_proton_test.h5: 446.13 M
+		 File scalars.txt: 559.58 K
+		 File ParticleBinning0.h5: 76.30 M
+		 File ParticleBinning1.h5: 76.30 M
+		 File ParticleBinning2.h5: 76.30 M
+		 File ParticleBinning3.h5: 76.30 M
+		 File ParticleBinning4.h5: 76.30 M
+		 File ParticleBinning5.h5: 76.30 M
+		 File ParticleBinning6.h5: 76.30 M
+		 File ParticleBinning7.h5: 76.30 M
+		 File ParticleBinning8.h5: 76.30 M
+		 File ParticleBinning9.h5: 76.30 M
+		 File ParticleBinning10.h5: 76.30 M
+		 File ParticleBinning11.h5: 76.30 M
+		 File ParticleBinning12.h5: 76.30 M
+		 File ParticleBinning13.h5: 76.30 M
+		 File ParticleBinning14.h5: 76.30 M
+		 File ParticleBinning15.h5: 76.30 M
+		 File ParticleBinning16.h5: 76.30 M
+		 File ParticleBinning17.h5: 76.30 M
+	 Total disk usage for diagnostics: 3.09 G
+	 
+	 Expected disk usage for each checkpoint:
+		 For fields: 154.48 M
+ 3D built-in profile `constant` (value: 64.000000)
+ 3D built-in profile `constant` (value: 1.000000)
+ 3D built-in profile `constant` (value: 64.000000)
+ 3D built-in profile `constant` (value: 1.000000)
+		 For particles: 32.00 K
+		 For diagnostics: 0 bytes
+	 Total disk usage for one checkpoint: 154.51 M
+ 
+
+ Keeping or closing the python runtime environment
+ --------------------------------------------------------------------------------
+	 Checking for cleanup() function:
+	 python cleanup function does not exist
+	 Keeping Python interpreter alive
+ 
+
+ END TEST MODE
+ --------------------------------------------------------------------------------

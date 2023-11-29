@@ -1,0 +1,549 @@
+Begin Time Tue May 17 06:45:33 CST 2022
+Directory is /home/zijin/pic/Moon/run/inj_3d/05
+                    _            _
+  ___           _  | |        _  \ \   Version : d021d9e-master
+ / __|  _ __   (_) | |  ___  (_)  | |   
+ \__ \ | '  \   _  | | / -_)  _   | |
+ |___/ |_|_|_| |_| |_| \___| |_|  | |  
+                                 /_/    
+ 
+ 
+
+ Reading the simulation parameters
+ --------------------------------------------------------------------------------
+ HDF5 version 1.12.2
+ Python version 3.9.2
+	 Parsing pyinit.py
+	 Parsing d021d9e-master
+	 Parsing pyprofiles.py
+	 Parsing test.py
+	 Parsing pycontrol.py
+	 Check for function preprocess()
+	 python preprocess function does not exist
+	 Calling python _smilei_check
+	 Calling python _prepare_checkpoint_dir
+	 Calling python _keep_python_running() :
+[;33m
+[WARNING](0) src/Params/Params.cpp:656 (Params) Patches distribution: hilbertian[0m
+[;33m
+[WARNING](0) src/Params/Params.cpp:1049 (compute) simulation_time has been redefined from 100361.034191 to 100360.929051 to match timestep.[0m
+ 
+
+ Geometry: 3Dcartesian
+ --------------------------------------------------------------------------------
+	 Interpolation order : 2
+	 Maxwell solver : Yee
+	 simulation duration = 100360.929051,   total number of iterations = 415820
+	 timestep = 0.241357 = 0.999000 x CFL,   time resolution = 4.143246
+	 Grid length: 26.7815, 53.5629, 26.7815
+	 Cell length: 0.41846, 0.41846, 0.41846
+	 Number of cells: 64, 128, 64
+	 Spatial resolution: 2.38971, 2.38971, 2.38971
+ 
+
+ Electromagnetic boundary conditions
+ --------------------------------------------------------------------------------
+	 xmin silver-muller, absorbing vector [1, 0, 0]
+	 xmax silver-muller, absorbing vector [-1, -0, -0]
+	 ymin silver-muller, absorbing vector [0, 1, 0]
+	 ymax silver-muller, absorbing vector [-0, -1, -0]
+	 zmin silver-muller, absorbing vector [0, 0, 1]
+	 zmax silver-muller, absorbing vector [-0, -0, -1]
+ 
+
+ Vectorization: 
+ --------------------------------------------------------------------------------
+	 Mode: off
+ 
+
+ Initializing MPI
+ --------------------------------------------------------------------------------
+ 3D built-in profile `constant` (value: 16.000000)
+ 3D built-in profile `constant` (value: 1.000000)
+ 3D built-in profile `constant` (value: 16.000000)
+ 3D built-in profile `constant` (value: 1.000000)
+	 MPI_THREAD_MULTIPLE enabled
+	 Number of MPI processes: 16
+	 Number of threads per MPI process : 24
+ 
+	 Number of patches: 8 x 16 x 8
+	 Number of cells in one patch: 8 x 8 x 8
+	 Dynamic load balancing: never
+ 
+
+ Initializing the restart environment
+ --------------------------------------------------------------------------------
+	 Code will dump after 415820 steps
+	 Code will exit after dump
+ 
+ 
+
+ Initializing species
+ --------------------------------------------------------------------------------
+	 
+	 Creating Species #0: solar_electron
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+	 
+	 Creating Species #1: solar_electron_test
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+	 
+	 Creating Species #2: solar_proton
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+	 
+	 Creating Species #3: solar_proton_test
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+ 
+
+ Initializing External fields
+ --------------------------------------------------------------------------------
+	 External field Bx: 3D from file `LMA_fields_input.h5/Bx`
+	 External field By: 3D from file `LMA_fields_input.h5/By`
+	 External field Bz: 3D from file `LMA_fields_input.h5/Bz`
+	 External field By: 3D built-in profile `constant` (value: 0.004183)
+ 
+
+ Initializing particle injectors
+ --------------------------------------------------------------------------------
+	 
+	 Creating Injector: injector_solar_electron
+		 > Associated species: solar_electron (of index 0)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 16.000000).
+	 
+	 Creating Injector: injector_solar_proton
+		 > Associated species: solar_proton (of index 2)
+		 > Injection from from the side: xmax
+		 > Position initialization: injector_solar_electron
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 16.000000).
+	 
+	 Creating Injector: injector_solar_electron_test
+		 > Associated species: solar_electron_test (of index 1)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 1.000000).
+	 
+	 Creating Injector: injector_solar_proton_test
+		 > Associated species: solar_proton_test (of index 3)
+		 > Injection from from the side: xmax
+		 > Position initialization: injector_solar_electron_test
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 1.000000).
+ 
+
+ Initializing Patches
+ --------------------------------------------------------------------------------
+	 First patch created
+		 Approximately 10% of patches created
+		 Approximately 20% of patches created
+		 Approximately 30% of patches created
+		 Approximately 40% of patches created
+		 Approximately 50% of patches created
+		 Approximately 60% of patches created
+		 Approximately 70% of patches created
+		 Approximately 80% of patches created
+		 Approximately 90% of patches created
+	 All patches created
+ 
+
+ Creating Diagnostics, antennas, and external fields
+ --------------------------------------------------------------------------------
+	 Created ParticleBinning #0: species solar_electron
+		 Axis x from 17.0588 to 17.0588 in 1 steps
+		 Axis y from 14.4506 to 14.4506 in 1 steps
+		 Axis z from 1.09733 to 1.09733 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #1: species solar_proton
+		 Axis x from 17.0588 to 17.0588 in 1 steps
+		 Axis y from 14.4506 to 14.4506 in 1 steps
+		 Axis z from 1.09733 to 1.09733 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #2: species solar_electron
+		 Axis x from 0.442634 to 0.442634 in 1 steps
+		 Axis y from 43.5611 to 43.5611 in 1 steps
+		 Axis z from 24.4449 to 24.4449 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #3: species solar_proton
+		 Axis x from 0.442634 to 0.442634 in 1 steps
+		 Axis y from 43.5611 to 43.5611 in 1 steps
+		 Axis z from 24.4449 to 24.4449 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #4: species solar_electron
+		 Axis x from 16.2466 to 16.2466 in 1 steps
+		 Axis y from 39.074 to 39.074 in 1 steps
+		 Axis z from 14.5591 to 14.5591 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #5: species solar_proton
+		 Axis x from 16.2466 to 16.2466 in 1 steps
+		 Axis y from 39.074 to 39.074 in 1 steps
+		 Axis z from 14.5591 to 14.5591 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #6: species solar_electron
+		 Axis x from 25.0426 to 25.0426 in 1 steps
+		 Axis y from 43.6995 to 43.6995 in 1 steps
+		 Axis z from 0.0733411 to 0.0733411 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #7: species solar_proton
+		 Axis x from 25.0426 to 25.0426 in 1 steps
+		 Axis y from 43.6995 to 43.6995 in 1 steps
+		 Axis z from 0.0733411 to 0.0733411 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #8: species solar_electron
+		 Axis x from 22.9625 to 22.9625 in 1 steps
+		 Axis y from 1.79894 to 1.79894 in 1 steps
+		 Axis z from 19.5412 to 19.5412 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #9: species solar_proton
+		 Axis x from 22.9625 to 22.9625 in 1 steps
+		 Axis y from 1.79894 to 1.79894 in 1 steps
+		 Axis z from 19.5412 to 19.5412 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #10: species solar_electron
+		 Axis x from 4.70432 to 4.70432 in 1 steps
+		 Axis y from 46.2344 to 46.2344 in 1 steps
+		 Axis z from 14.5011 to 14.5011 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #11: species solar_proton
+		 Axis x from 4.70432 to 4.70432 in 1 steps
+		 Axis y from 46.2344 to 46.2344 in 1 steps
+		 Axis z from 14.5011 to 14.5011 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #12: species solar_electron
+		 Axis x from 8.02673 to 8.02673 in 1 steps
+		 Axis y from 22.6404 to 22.6404 in 1 steps
+		 Axis z from 0.758442 to 0.758442 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #13: species solar_proton
+		 Axis x from 8.02673 to 8.02673 in 1 steps
+		 Axis y from 22.6404 to 22.6404 in 1 steps
+		 Axis z from 0.758442 to 0.758442 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #14: species solar_electron
+		 Axis x from 3.32849 to 3.32849 in 1 steps
+		 Axis y from 35.9206 to 35.9206 in 1 steps
+		 Axis z from 17.3327 to 17.3327 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #15: species solar_proton
+		 Axis x from 3.32849 to 3.32849 in 1 steps
+		 Axis y from 35.9206 to 35.9206 in 1 steps
+		 Axis z from 17.3327 to 17.3327 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Created ParticleBinning #16: species solar_electron
+		 Axis x from 16.4809 to 16.4809 in 1 steps
+		 Axis y from 20.5509 to 20.5509 in 1 steps
+		 Axis z from 26.7067 to 26.7067 in 1 steps
+		 Axis vx from -0.039645 to 0.039645 in 100 steps
+		 Axis vy from -0.039645 to 0.039645 in 100 steps
+		 Axis vz from -0.039645 to 0.039645 in 100 steps
+	 Created ParticleBinning #17: species solar_proton
+		 Axis x from 16.4809 to 16.4809 in 1 steps
+		 Axis y from 20.5509 to 20.5509 in 1 steps
+		 Axis z from 26.7067 to 26.7067 in 1 steps
+		 Axis vx from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vy from -0.00222832 to 0.00222832 in 100 steps
+		 Axis vz from -0.00222832 to 0.00222832 in 100 steps
+	 Diagnostic Fields #0  :
+		 Ex Ey Ez Bx By Bz Bx_m By_m Bz_m Jx Jy Jz Rho Jx_solar_electron Jy_solar_electron Jz_solar_electron Rho_solar_electron Jx_solar_electron_test Jy_solar_electron_test Jz_solar_electron_test Rho_solar_electron_test Jx_solar_proton Jy_solar_proton Jz_solar_proton Rho_solar_proton Jx_solar_proton_test Jy_solar_proton_test Jz_solar_proton_test Rho_solar_proton_test 
+	 Probe diagnostic #0
+		 1 points
+		 origin : 17.0588, 14.4506, 1.09733
+	 Probe diagnostic #1
+		 1 points
+		 origin : 0.442634, 43.5611, 24.4449
+	 Probe diagnostic #2
+		 1 points
+		 origin : 16.2466, 39.074, 14.5591
+	 Probe diagnostic #3
+		 1 points
+		 origin : 25.0426, 43.6995, 0.0733411
+	 Probe diagnostic #4
+		 1 points
+		 origin : 22.9625, 1.79894, 19.5412
+	 Probe diagnostic #5
+		 1 points
+		 origin : 4.70432, 46.2344, 14.5011
+	 Probe diagnostic #6
+		 1 points
+		 origin : 8.02673, 22.6404, 0.758442
+	 Probe diagnostic #7
+		 1 points
+		 origin : 3.32849, 35.9206, 17.3327
+	 Probe diagnostic #8
+		 1 points
+		 origin : 16.4809, 20.5509, 26.7067
+	 Created TrackParticles #0: species solar_electron
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 16.000000)
+	 Created TrackParticles #1: species solar_electron_test
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 1.000000)
+	 Created TrackParticles #2: species solar_proton
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 16.000000)
+	 Created TrackParticles #3: species solar_proton_test
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 1.000000)
+ 
+
+ finalize MPI
+ --------------------------------------------------------------------------------
+	 Done creating diagnostics, antennas, and external fields
+ 
+
+ Minimum memory consumption (does not include all temporary buffers)
+ --------------------------------------------------------------------------------
+              Particles: Master 0 MB;   Max 0 MB;   Global 0 GB
+                 Fields: Master 31 MB;   Max 31 MB;   Global 0.486 GB
+            scalars.txt: Master 0 MB;   Max 0 MB;   Global 0 GB
+    ParticleBinning0.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning1.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning2.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning3.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning4.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning5.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning6.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning7.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning8.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+    ParticleBinning9.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+   ParticleBinning10.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+   ParticleBinning11.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+   ParticleBinning12.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+   ParticleBinning13.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+   ParticleBinning14.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+   ParticleBinning15.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+   ParticleBinning16.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+   ParticleBinning17.h5: Master 7 MB;   Max 7 MB;   Global 0.119 GB
+             Fields0.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+             Probes0.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+             Probes1.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+             Probes2.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+             Probes3.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+             Probes4.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+             Probes5.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+             Probes6.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+             Probes7.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+             Probes8.h5: Master 0 MB;   Max 0 MB;   Global 1.36e-07 GB
+ TrackParticlesDisordered_solar_electron.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_electron_test.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_proton.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_proton_test.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ 
+
+ Initial fields setup
+ --------------------------------------------------------------------------------
+	 Applying external fields at time t = 0
+	 Applying prescribed fields at time t = 0
+	 Applying antennas at time t = 0
+ 
+
+ Open files & initialize diagnostics
+ --------------------------------------------------------------------------------
+ 
+
+ Running diags at time t = 0
+ --------------------------------------------------------------------------------
+ 
+
+ Species creation summary
+ --------------------------------------------------------------------------------
+		 Species 0 (solar_electron) created with 0 particles
+		 Species 1 (solar_electron_test) created with 0 particles
+		 Species 2 (solar_proton) created with 0 particles
+		 Species 3 (solar_proton_test) created with 0 particles
+ 
+
+ Expected disk usage (approximate)
+ --------------------------------------------------------------------------------
+	 WARNING: disk usage by non-uniform particles maybe strongly underestimated,
+	    especially when particles are created at runtime (ionization, pair generation, etc.)
+	 
+	 Expected disk usage for diagnostics:
+		 File Fields0.h5: 1.18 G
+		 File Probes0.h5: 607.64 K
+		 File Probes1.h5: 607.64 K
+		 File Probes2.h5: 607.64 K
+		 File Probes3.h5: 607.64 K
+		 File Probes4.h5: 607.64 K
+		 File Probes5.h5: 607.64 K
+		 File Probes6.h5: 607.64 K
+		 File Probes7.h5: 607.64 K
+		 File Probes8.h5: 607.64 K
+		 File TrackParticlesDisordered_solar_electron.h5: 446.13 M
+		 File TrackParticlesDisordered_solar_electron_test.h5: 446.13 M
+		 File TrackParticlesDisordered_solar_proton.h5: 446.13 M
+		 File TrackParticlesDisordered_solar_proton_test.h5: 446.13 M
+		 File scalars.txt: 559.58 K
+		 File ParticleBinning0.h5: 76.30 M
+		 File ParticleBinning1.h5: 76.30 M
+		 File ParticleBinning2.h5: 76.30 M
+		 File ParticleBinning3.h5: 76.30 M
+		 File ParticleBinning4.h5: 76.30 M
+		 File ParticleBinning5.h5: 76.30 M
+		 File ParticleBinning6.h5: 76.30 M
+		 File ParticleBinning7.h5: 76.30 M
+		 File ParticleBinning8.h5: 76.30 M
+		 File ParticleBinning9.h5: 76.30 M
+		 File ParticleBinning10.h5: 76.30 M
+		 File ParticleBinning11.h5: 76.30 M
+		 File ParticleBinning12.h5: 76.30 M
+		 File ParticleBinning13.h5: 76.30 M
+		 File ParticleBinning14.h5: 76.30 M
+		 File ParticleBinning15.h5: 76.30 M
+		 File ParticleBinning16.h5: 76.30 M
+		 File ParticleBinning17.h5: 76.30 M
+	 Total disk usage for diagnostics: 4.27 G
+	 
+	 Expected disk usage for each checkpoint:
+		 For fields: 154.48 M
+ 3D built-in profile `constant` (value: 16.000000)
+ 3D built-in profile `constant` (value: 1.000000)
+ 3D built-in profile `constant` (value: 16.000000)
+ 3D built-in profile `constant` (value: 1.000000)
+		 For particles: 32.00 K
+		 For diagnostics: 0 bytes
+	 Total disk usage for one checkpoint: 154.51 M
+ 
+
+ Keeping or closing the python runtime environment
+ --------------------------------------------------------------------------------
+	 Checking for cleanup() function:
+	 python cleanup function does not exist
+	 Keeping Python interpreter alive
+ 
+
+ Time-Loop started: number of time-steps n_time = 415820
+ --------------------------------------------------------------------------------
+[;33m
+[WARNING](0) src/Params/Params.cpp:1381 (print_timestep_headers) The following `push time` assumes a global number of 384 cores (hyperthreading is unknown)[0m
+        timestep       sim time   cpu time [s]   (    diff [s] )   push time [ns]
+    41582/415820     1.0036e+04     2.1825e+03   (  2.1825e+03 )            2720 
+    83164/415820     2.0072e+04     5.2798e+03   (  3.0973e+03 )            2611 
+   124746/415820     3.0108e+04     8.2654e+03   (  2.9856e+03 )            2362 
+   166328/415820     4.0144e+04     1.0870e+04   (  2.6044e+03 )            2786 
+   207910/415820     5.0181e+04     1.2662e+04   (  1.7919e+03 )            3698 
+   249492/415820     6.0217e+04     1.4018e+04   (  1.3562e+03 )            5355 
+   291074/415820     7.0253e+04     1.5222e+04   (  1.2040e+03 )            7422 
+   332656/415820     8.0289e+04     1.6369e+04   (  1.1467e+03 )            9670 
+   374238/415820     9.0325e+04     1.7483e+04   (  1.1144e+03 )           11916 
+ Step 415820 : DUMP fields and particles 0
+   415820/415820     1.0036e+05     1.8577e+04   (  1.0941e+03 )           14100 
+ 
+
+ End time loop, time dual = 1.0036e+05
+ --------------------------------------------------------------------------------
+ 
+
+ Time profiling : (print time > 0.001%)
+ --------------------------------------------------------------------------------
+ Time_in_time_loop	1.8577e+04	9.9724e+01% coverage
+ 	           Particles	4.879717e+03	2.6e+01%
+ 	             Maxwell	6.288686e+01	    <1%
+ 	         Diagnostics	2.622216e+03	1.4e+01%
+ 	      Sync Particles	1.563263e+03	8.4e+00%
+ 	         Sync Fields	2.792509e+02	1.5e+00%
+ 	      Sync Densities	6.626750e+03	3.6e+01%
+ 	      Part Injection	2.470529e+03	1.3e+01%
+ 
+	 Printed times are averaged per MPI process
+ 		 See advanced metrics in profil.txt
+ 
+	Diagnostics profile :
+ 		         scalars.txt	2.4e+01
+ 		 ParticleBinning0.h5	3.9e+00
+ 		 ParticleBinning1.h5	3.8e+00
+ 		 ParticleBinning2.h5	3.7e+00
+ 		 ParticleBinning3.h5	3.7e+00
+ 		 ParticleBinning4.h5	3.7e+00
+ 		 ParticleBinning5.h5	3.7e+00
+ 		 ParticleBinning6.h5	3.7e+00
+ 		 ParticleBinning7.h5	3.7e+00
+ 		 ParticleBinning8.h5	3.7e+00
+ 		 ParticleBinning9.h5	3.7e+00
+ 		ParticleBinning10.h5	3.7e+00
+ 		ParticleBinning11.h5	3.7e+00
+ 		ParticleBinning12.h5	3.7e+00
+ 		ParticleBinning13.h5	3.7e+00
+ 		ParticleBinning14.h5	3.7e+00
+ 		ParticleBinning15.h5	3.7e+00
+ 		ParticleBinning16.h5	3.6e+00
+ 		ParticleBinning17.h5	3.7e+00
+ 		          Fields0.h5	5.6e+00
+ 		          Probes0.h5	7.7e+00
+ 		          Probes1.h5	3.1e+00
+ 		          Probes2.h5	3.1e+00
+ 		          Probes3.h5	3.1e+00
+ 		          Probes4.h5	3.1e+00
+ 		          Probes5.h5	3.0e+00
+ 		          Probes6.h5	3.1e+00
+ 		          Probes7.h5	3.1e+00
+ 		          Probes8.h5	3.0e+00
+ 		TrackParticlesDisordered_solar_electron.h5	9.8e+02
+ 		TrackParticlesDisordered_solar_electron_test.h5	3.2e+02
+ 		TrackParticlesDisordered_solar_proton.h5	6.3e+02
+ 		TrackParticlesDisordered_solar_proton_test.h5	5.0e+02
+ 
+
+ END
+ --------------------------------------------------------------------------------
+End Time Tue May 17 11:56:01 CST 2022

@@ -1,0 +1,641 @@
+[cu08:201068:0:201068] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0003116c)
+[cu08:201067:0:201067] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0003116b)
+[cu03:183524:0:183524] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002cce4)
+[cu03:183523:0:183523] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002cce3)
+[cu02:181613:0:181613] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c56d)
+[cu04:184406:0:184406] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002d056)
+[cu02:181612:0:181612] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c56c)
+[cu04:184405:0:184405] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002d055)
+[cu07:180272:0:180272] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c030)
+[cu01:191200:0:191200] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002eae0)
+[cu07:180271:0:180271] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c02f)
+[cu01:191199:0:191199] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002eadf)
+[cu06:173576:0:173576] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002a608)
+[cu05:180493:0:180493] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c10d)
+[cu06:173575:0:173575] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002a607)
+[cu05:180492:0:180492] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c10c)
+==== backtrace (tid: 183524) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+==== backtrace (tid: 181613) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+#Stack trace (most recent call last):
+6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7ffb68dd9554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7ffb6bff24fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002cce4])
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fba8171c554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fba849354fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c56d])
+==== backtrace (tid: 201068) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fc3e30f1554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fc3e630a4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0003116c])
+==== backtrace (tid: 183523) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fdc1ab4f554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fdc1dd684fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002cce3])
+==== backtrace (tid: 184406) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f7d64186554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f7d6739f4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002d056])
+==== backtrace (tid: 181612) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fcd19844554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fcd1ca5d4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c56c])
+==== backtrace (tid: 201067) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f62ae047554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f62b12604fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0003116b])
+==== backtrace (tid: 191200) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f4485fab554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f44891c44fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002eae0])
+==== backtrace (tid: 184405) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fc5ccafe554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fc5cfd174fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002d055])
+==== backtrace (tid: 173576) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+==== backtrace (tid: 180272) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+Stack trace (most recent call last):
+##6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f7d28b61554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd6    Object "[0xffffffffffffffff]", at , in main
+0xffffffffffffffff, in 
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at , in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+0x5ec8c6, in 
+#4 #1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at    Object "/lib64/libc.so.6", at 0x7f0352d25554, in __libc_start_main0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#
+#3    Object "0    Object "/lib64/libpthread.so.0", at 0x7f7d2bd7a4fb/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main, in raise
+
+Segmentation fault (Signal sent by tkill() [0x3ee0002a608])
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f0355f3e4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c030])
+==== backtrace (tid: 180493) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f75abd97554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f75aefb04fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c10d])
+==== backtrace (tid: 191199) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fd411f10554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fd4151294fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002eadf])
+==== backtrace (tid: 180271) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+==== backtrace (tid: 173575) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+Stack trace (most recent call last):
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fe177a31554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fe17ac4a4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c02f])
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f693434d554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f69375664fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002a607])
+==== backtrace (tid: 180492) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f69e99de554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f69ecbf74fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c10c])
+==> Warning: Skipping reversal of unreversable operation<class 'spack.util.environment.RemovePath'> FI_PROVIDER_PATH
+[cu08:201332:0:201332] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee00031274)
+[cu08:201331:0:201331] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee00031273)
+[cu03:183532:0:183532] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002ccec)
+[cu03:183531:0:183531] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002cceb)
+[cu02:181627:0:181627] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c57b)
+[cu04:184414:0:184414] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002d05e)
+[cu04:184413:0:184413] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002d05d)
+[cu02:181626:0:181626] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c57a)
+[cu06:173590:0:173590] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002a616)
+[cu06:173589:0:173589] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002a615)
+[cu01:191215:0:191215] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002eaef)
+[cu07:180287:0:180287] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c03f)
+[cu01:191214:0:191214] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002eaee)
+[cu07:180286:0:180286] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c03e)
+[cu05:180508:0:180508] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c11c)
+[cu05:180507:0:180507] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c11b)
+==== backtrace (tid: 201332) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f405452c554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f40577454fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee00031274])
+==== backtrace (tid: 183532) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+==== backtrace (tid: 201331) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+Stack trace (most recent call last):
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f6f18973554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at #0x7f6f1bb8c4fb, in raise
+6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+Segmentation fault (Signal sent by tkill() [0x3ee0002ccec])
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7ff0ceb7b554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7ff0d1d944fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee00031273])
+==== backtrace (tid: 183531) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fa143359554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fa1465724fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002cceb])
+==== backtrace (tid: 181627) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+==== backtrace (tid: 184414) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f22ed04a554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0#", at 0x7f22f02634fb, in raise
+6    Object "Segmentation fault (Signal sent by tkill() [0x3ee0002c57b])
+[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fcf007a2554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fcf039bb4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002d05e])
+==== backtrace (tid: 184413) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f1be812f554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f1beb3484fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002d05d])
+==== backtrace (tid: 181626) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f90b82c3554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f90bb4dc4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c57a])
+==== backtrace (tid: 173590) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fdd6a7e3554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fdd6d9fc4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002a616])
+==== backtrace (tid: 180287) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7ffa5b78c554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7ffa5e9a54fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c03f])
+==== backtrace (tid: 173589) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+==== backtrace (tid: 191215) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+Stack trace (most recent call last):
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7fd1dba9c554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7fd1decb54fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002a615])
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f054e729554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f05519424fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002eaef])
+==== backtrace (tid: 180286) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f044838d554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f044b5a64fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c03e])
+==== backtrace (tid: 180508) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f169a515554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f169d72e4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c11c])
+==== backtrace (tid: 191214) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f4b670bf554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f4b6a2d84fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002eaee])
+==== backtrace (tid: 180507) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x0000000000754cd0 Params::runScript()  /home/zijin/Smilei/src/Params/Params.cpp:1369
+ 3 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 4 0x0000000000755ce3 Params::Params()  /home/zijin/Smilei/src/Params/Params.cpp:173
+ 5 0x00000000004d2bbe main()  /home/zijin/Smilei/src/Smilei.cpp:69
+ 6 0x0000000000022555 __libc_start_main()  ???:0
+ 7 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#6    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#5    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#4    Object "/lib64/libc.so.6", at 0x7f213ba9d554, in __libc_start_main
+#3    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bbd, in main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x755ce2, in Params::Params(SmileiMPI*, std::vector<std::string, std::allocator<std::string> >)
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x754ccf, in Params::runScript(std::string, std::string, _object*)
+#0    Object "/lib64/libpthread.so.0", at 0x7f213ecb64fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c11b])

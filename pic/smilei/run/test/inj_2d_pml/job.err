@@ -1,0 +1,272 @@
+[cu08:202024:0:202024] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee00031528)
+[cu03:183980:0:183980] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002ceac)
+[cu05:180983:0:180983] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c2f7)
+[cu04:184860:0:184860] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002d21c)
+[cu06:174046:0:174046] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002a7de)
+[cu07:180735:0:180735] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c1ff)
+[cu02:182077:0:182077] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c73d)
+[cu08:202025:0:202025] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee00031529)
+[cu03:183979:0:183979] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002ceab)
+[cu05:180984:0:180984] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c2f8)
+[cu04:184861:0:184861] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002d21d)
+[cu06:174047:0:174047] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002a7df)
+[cu07:180736:0:180736] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c200)
+[cu02:182076:0:182076] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002c73c)
+[cu01:191668:0:191668] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002ecb4)
+[cu01:191669:0:191669] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x3ee0002ecb5)
+==== backtrace (tid: 180736) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7feff15d3554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7feff47ec4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c200])
+==== backtrace (tid: 180983) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7f54c5cd6554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7f54c8eef4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c2f7])
+==== backtrace (tid: 183980) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7f7ffe37e554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7f80015974fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002ceac])
+==== backtrace (tid: 174047) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+==== backtrace (tid: 184860) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at #0xffffffffffffffff, in 
+5    Object "#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at [0xffffffffffffffff]", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7f572d139554, in 0xffffffffffffffff, in 
+__libc_start_main
+##4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd80x5ec8c6, in 
+#, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7f57303524fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002a7df])
+3    Object "/lib64/libc.so.6", at 0x7f43ea5b1554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7f43ed7ca4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002d21c])
+==== backtrace (tid: 191668) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7fc63e39b554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7fc6415b44fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002ecb4])
+==== backtrace (tid: 182077) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7fac8ae24554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7fac8e03d4fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c73d])
+==== backtrace (tid: 202024) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7f4f67e5f554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7f4f6b0784fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee00031528])
+==== backtrace (tid: 180735) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7f7e9bcd0554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei==== backtrace (tid: 180984) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+", at 0x4d2bd8, in main
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&) 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+
+#0    Object "/lib64/libpthread.so.0", at 0x7f7e9eee94fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c1ff])
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7f659dbdc554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7f65a0df54fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c2f8])
+==== backtrace (tid: 183979) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7fdc1073f554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7fdc139584fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002ceab])
+==== backtrace (tid: 174046) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+==== backtrace (tid: 184861) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+##3    Object "/lib64/libc.so.6", at 5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+0x7fe0bda8b554, in __libc_start_main
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+", at 0x4d2bd8, in main
+#3    Object "/lib64/libc.so.6", at 0x7f937509c554#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+, in __libc_start_main
+##0    Object "/lib64/libpthread.so.0", at 2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd80x7fe0c0ca44fb, in raise
+, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+Segmentation fault (Signal sent by tkill() [0x3ee0002a7de])
+#0    Object "/lib64/libpthread.so.0", at 0x7f93782b54fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002d21d])
+==== backtrace (tid: 191669) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7f0d254cf554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7f0d286e84fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002ecb5])
+==== backtrace (tid: 182076) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7f1edeea7554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7f1ee20c04fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee0002c73c])
+==== backtrace (tid: 202025) ====
+ 0 0x0000000000050a75 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000000f4fb raise()  ???:0
+ 2 0x000000000074a0ac OpenPMDparams::OpenPMDparams()  /home/zijin/Smilei/src/Params/OpenPMDparams.cpp:106
+ 3 0x00000000004d2bd9 main()  /home/zijin/Smilei/src/Smilei.cpp:70
+ 4 0x0000000000022555 __libc_start_main()  ???:0
+ 5 0x00000000005ec8c7 _start()  ???:0
+=================================
+Stack trace (most recent call last):
+#5    Object "[0xffffffffffffffff]", at 0xffffffffffffffff, in 
+#4    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x5ec8c6, in 
+#3    Object "/lib64/libc.so.6", at 0x7fc3b9e7a554, in __libc_start_main
+#2    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x4d2bd8, in main
+#1    Object "/home/zijin/Smilei/build/smilei-oneapi/smilei", at 0x74a0ab, in OpenPMDparams::OpenPMDparams(Params&)
+#0    Object "/lib64/libpthread.so.0", at 0x7fc3bd0934fb, in raise
+Segmentation fault (Signal sent by tkill() [0x3ee00031529])

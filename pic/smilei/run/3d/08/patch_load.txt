@@ -1,0 +1,2 @@
+Target load = 2048
+patch count = 2048

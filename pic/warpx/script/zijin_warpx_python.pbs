@@ -1,0 +1,16 @@
+#!/bin/sh
+# An example for hybrid mpi-openmp job with gcc compilers and open MPI
+#PBS -N pic
+#PBS -M noone@mail.ustc.edu.cn
+#PBS -o job.log
+#PBS -e job.err
+#PBS -q batch
+#PBS -l walltime=10000:00:00
+#PBS -l nodes=1:ppn=48
+cd $PBS_O_WORKDIR
+echo Begin Time `date`
+echo Directory is $PWD
+source /home/zijin/mambaforge/bin/activate
+conda activate warpx
+python test.py
+echo End Time `date`

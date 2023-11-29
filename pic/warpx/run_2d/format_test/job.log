@@ -1,0 +1,235 @@
+OMP initialized with 24 OMP threads
+AMReX (22.04) initialized
+WarpX (22.04-nogit)
+PICSAR (e7ef03b852b8)
+Level 0: dt = 1.171651356e-06 ; dx = 497.2429246 ; dz = 497.2429246
+
+Grids Summary:
+  Level 0   32 grids  32768 cells  100 % of domain
+            smallest grid: 32 x 32  biggest grid: 32 x 32
+
+-------------------------------------------------------------------------------
+--------------------------- MAIN EM PIC PARAMETERS ----------------------------
+-------------------------------------------------------------------------------
+Geometry:             | 2D (XZ)
+Operation mode:       | Electromagnetic
+                      | - vacuum
+-------------------------------------------------------------------------------
+Current Deposition:   | Esirkepov 
+Particle Pusher:      | Boris 
+Charge Deposition:    | standard 
+Field Gathering:      | energy-conserving 
+Particle Shape Factor:| 1
+-------------------------------------------------------------------------------
+Maxwell Solver:       | Yee 
+                      | - staggered mode 
+Guard cells           | - ng_alloc_EB = (2,2)
+ (allocated for E/B)  | 
+-------------------------------------------------------------------------------
+--- INFO    : Writing plotfile diags/diag2000000
+
+STEP 1 starts ...
+
+
+**** WARNINGS ******************************************************************
+* GLOBAL warning list  after  [ FIRST STEP ]
+*
+* No recorded warnings.
+********************************************************************************
+
+STEP 1 ends. TIME = 1.171651356e-06 DT = 1.171651356e-06
+Evolve time = 2.864059985 s; This step = 2.864059985 s; Avg. per step = 2.864059985 s
+
+STEP 2 starts ...
+STEP 2 ends. TIME = 2.343302713e-06 DT = 1.171651356e-06
+Evolve time = 3.955018537 s; This step = 1.090958552 s; Avg. per step = 1.977509268 s
+
+STEP 3 starts ...
+STEP 3 ends. TIME = 3.514954069e-06 DT = 1.171651356e-06
+Evolve time = 4.183839239 s; This step = 0.228820702 s; Avg. per step = 1.39461308 s
+
+STEP 4 starts ...
+STEP 4 ends. TIME = 4.686605425e-06 DT = 1.171651356e-06
+Evolve time = 4.413070839 s; This step = 0.2292316 s; Avg. per step = 1.10326771 s
+
+STEP 5 starts ...
+STEP 5 ends. TIME = 5.858256782e-06 DT = 1.171651356e-06
+Evolve time = 4.641819715 s; This step = 0.228748876 s; Avg. per step = 0.928363943 s
+
+STEP 6 starts ...
+STEP 6 ends. TIME = 7.029908138e-06 DT = 1.171651356e-06
+Evolve time = 4.870360221 s; This step = 0.228540506 s; Avg. per step = 0.8117267035 s
+
+STEP 7 starts ...
+STEP 7 ends. TIME = 8.201559494e-06 DT = 1.171651356e-06
+Evolve time = 5.099130719 s; This step = 0.228770498 s; Avg. per step = 0.7284472456 s
+
+STEP 8 starts ...
+STEP 8 ends. TIME = 9.373210851e-06 DT = 1.171651356e-06
+Evolve time = 5.328614763 s; This step = 0.229484044 s; Avg. per step = 0.6660768454 s
+
+STEP 9 starts ...
+STEP 9 ends. TIME = 1.054486221e-05 DT = 1.171651356e-06
+Evolve time = 5.557848863 s; This step = 0.2292341 s; Avg. per step = 0.6175387626 s
+
+STEP 10 starts ...
+STEP 10 ends. TIME = 1.171651356e-05 DT = 1.171651356e-06
+Evolve time = 5.78641216 s; This step = 0.228563297 s; Avg. per step = 0.578641216 s
+
+STEP 11 starts ...
+STEP 11 ends. TIME = 1.288816492e-05 DT = 1.171651356e-06
+Evolve time = 6.01567096 s; This step = 0.2292588 s; Avg. per step = 0.5468791782 s
+
+STEP 12 starts ...
+STEP 12 ends. TIME = 1.405981628e-05 DT = 1.171651356e-06
+Evolve time = 6.244676257 s; This step = 0.229005297 s; Avg. per step = 0.5203896881 s
+
+STEP 13 starts ...
+STEP 13 ends. TIME = 1.523146763e-05 DT = 1.171651356e-06
+Evolve time = 6.473386168 s; This step = 0.228709911 s; Avg. per step = 0.4979527822 s
+
+STEP 14 starts ...
+STEP 14 ends. TIME = 1.640311899e-05 DT = 1.171651356e-06
+Evolve time = 6.701810428 s; This step = 0.22842426 s; Avg. per step = 0.4787007449 s
+
+STEP 15 starts ...
+STEP 15 ends. TIME = 1.757477034e-05 DT = 1.171651356e-06
+Evolve time = 6.930053306 s; This step = 0.228242878 s; Avg. per step = 0.4620035537 s
+
+STEP 16 starts ...
+STEP 16 ends. TIME = 1.87464217e-05 DT = 1.171651356e-06
+Evolve time = 7.15856478 s; This step = 0.228511474 s; Avg. per step = 0.4474102987 s
+
+STEP 17 starts ...
+STEP 17 ends. TIME = 1.991807306e-05 DT = 1.171651356e-06
+Evolve time = 7.387587042 s; This step = 0.229022262 s; Avg. per step = 0.4345639436 s
+
+STEP 18 starts ...
+STEP 18 ends. TIME = 2.108972441e-05 DT = 1.171651356e-06
+Evolve time = 7.616044561 s; This step = 0.228457519 s; Avg. per step = 0.4231135867 s
+
+STEP 19 starts ...
+STEP 19 ends. TIME = 2.226137577e-05 DT = 1.171651356e-06
+Evolve time = 7.844643642 s; This step = 0.228599081 s; Avg. per step = 0.4128759812 s
+
+STEP 20 starts ...
+STEP 20 ends. TIME = 2.343302713e-05 DT = 1.171651356e-06
+Evolve time = 8.073181354 s; This step = 0.228537712 s; Avg. per step = 0.4036590677 s
+
+STEP 21 starts ...
+STEP 21 ends. TIME = 2.460467848e-05 DT = 1.171651356e-06
+Evolve time = 8.317828593 s; This step = 0.244647239 s; Avg. per step = 0.3960870759 s
+
+STEP 22 starts ...
+STEP 22 ends. TIME = 2.577632984e-05 DT = 1.171651356e-06
+Evolve time = 8.546621396 s; This step = 0.228792803 s; Avg. per step = 0.3884827907 s
+
+STEP 23 starts ...
+STEP 23 ends. TIME = 2.69479812e-05 DT = 1.171651356e-06
+Evolve time = 8.774973085 s; This step = 0.228351689 s; Avg. per step = 0.3815205689 s
+
+STEP 24 starts ...
+STEP 24 ends. TIME = 2.811963255e-05 DT = 1.171651356e-06
+Evolve time = 9.003158046 s; This step = 0.228184961 s; Avg. per step = 0.3751315852 s
+
+STEP 25 starts ...
+STEP 25 ends. TIME = 2.929128391e-05 DT = 1.171651356e-06
+Evolve time = 9.232119046 s; This step = 0.228961 s; Avg. per step = 0.3692847618 s
+
+STEP 26 starts ...
+STEP 26 ends. TIME = 3.046293526e-05 DT = 1.171651356e-06
+Evolve time = 9.460681977 s; This step = 0.228562931 s; Avg. per step = 0.3638723837 s
+
+STEP 27 starts ...
+STEP 27 ends. TIME = 3.163458662e-05 DT = 1.171651356e-06
+Evolve time = 9.689043349 s; This step = 0.228361372 s; Avg. per step = 0.3588534574 s
+
+STEP 28 starts ...
+STEP 28 ends. TIME = 3.280623798e-05 DT = 1.171651356e-06
+Evolve time = 10.12501105 s; This step = 0.435967701 s; Avg. per step = 0.3616075375 s
+
+STEP 29 starts ...
+STEP 29 ends. TIME = 3.397788933e-05 DT = 1.171651356e-06
+Evolve time = 10.3574555 s; This step = 0.232444451 s; Avg. per step = 0.357153638 s
+
+STEP 30 starts ...
+STEP 30 ends. TIME = 3.514954069e-05 DT = 1.171651356e-06
+Evolve time = 10.58780018 s; This step = 0.230344684 s; Avg. per step = 0.3529266728 s
+
+STEP 31 starts ...
+STEP 31 ends. TIME = 3.632119205e-05 DT = 1.171651356e-06
+Evolve time = 10.81677048 s; This step = 0.228970291 s; Avg. per step = 0.3489280799 s
+
+STEP 32 starts ...
+STEP 32 ends. TIME = 3.74928434e-05 DT = 1.171651356e-06
+Evolve time = 11.04584923 s; This step = 0.229078753 s; Avg. per step = 0.3451827884 s
+
+STEP 33 starts ...
+STEP 33 ends. TIME = 3.866449476e-05 DT = 1.171651356e-06
+Evolve time = 11.27545641 s; This step = 0.229607178 s; Avg. per step = 0.3416804972 s
+
+STEP 34 starts ...
+STEP 34 ends. TIME = 3.983614611e-05 DT = 1.171651356e-06
+Evolve time = 11.50461822 s; This step = 0.229161812 s; Avg. per step = 0.3383711241 s
+
+STEP 35 starts ...
+STEP 35 ends. TIME = 4.100779747e-05 DT = 1.171651356e-06
+Evolve time = 11.73325275 s; This step = 0.228634533 s; Avg. per step = 0.3352357929 s
+
+STEP 36 starts ...
+STEP 36 ends. TIME = 4.217944883e-05 DT = 1.171651356e-06
+Evolve time = 11.96258027 s; This step = 0.22932752 s; Avg. per step = 0.3322938964 s
+
+STEP 37 starts ...
+STEP 37 ends. TIME = 4.335110018e-05 DT = 1.171651356e-06
+Evolve time = 12.19111891 s; This step = 0.228538639 s; Avg. per step = 0.3294897003 s
+
+STEP 38 starts ...
+STEP 38 ends. TIME = 4.452275154e-05 DT = 1.171651356e-06
+Evolve time = 12.42718946 s; This step = 0.236070551 s; Avg. per step = 0.3270313016 s
+
+STEP 39 starts ...
+STEP 39 ends. TIME = 4.56944029e-05 DT = 1.171651356e-06
+Evolve time = 12.65638302 s; This step = 0.229193556 s; Avg. per step = 0.3245226415 s
+
+STEP 40 starts ...
+STEP 40 ends. TIME = 4.686605425e-05 DT = 1.171651356e-06
+Evolve time = 12.88530516 s; This step = 0.228922145 s; Avg. per step = 0.3221326291 s
+
+STEP 41 starts ...
+STEP 41 ends. TIME = 4.803770561e-05 DT = 1.171651356e-06
+Evolve time = 13.11504179 s; This step = 0.229736632 s; Avg. per step = 0.3198790682 s
+
+STEP 42 starts ...
+STEP 42 ends. TIME = 4.920935697e-05 DT = 1.171651356e-06
+Evolve time = 13.34467875 s; This step = 0.229636952 s; Avg. per step = 0.3177304464 s
+
+STEP 43 starts ...
+STEP 43 ends. TIME = 5.038100832e-05 DT = 1.171651356e-06
+Evolve time = 13.5732423 s; This step = 0.228563558 s; Avg. per step = 0.3156567978 s
+
+STEP 44 starts ...
+STEP 44 ends. TIME = 5.155265968e-05 DT = 1.171651356e-06
+Evolve time = 13.80573645 s; This step = 0.232494147 s; Avg. per step = 0.3137667375 s
+
+STEP 45 starts ...
+STEP 45 ends. TIME = 5.272431103e-05 DT = 1.171651356e-06
+Evolve time = 14.03547899 s; This step = 0.22974254 s; Avg. per step = 0.3118995332 s
+
+STEP 46 starts ...
+STEP 46 ends. TIME = 5.389596239e-05 DT = 1.171651356e-06
+Evolve time = 14.27833252 s; This step = 0.242853532 s; Avg. per step = 0.3103985331 s
+
+STEP 47 starts ...
+STEP 47 ends. TIME = 5.506761375e-05 DT = 1.171651356e-06
+Evolve time = 14.50665903 s; This step = 0.228326505 s; Avg. per step = 0.3086523198 s
+
+STEP 48 starts ...
+STEP 48 ends. TIME = 5.62392651e-05 DT = 1.171651356e-06
+Evolve time = 14.73669744 s; This step = 0.230038408 s; Avg. per step = 0.3070145299 s
+
+STEP 49 starts ...
+STEP 49 ends. TIME = 5.741091646e-05 DT = 1.171651356e-06
+Evolve time = 14.96553249 s; This step = 0.228835049 s; Avg. per step = 0.3054190303 s
+
+STEP 50 starts ...

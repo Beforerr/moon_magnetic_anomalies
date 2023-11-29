@@ -1,0 +1,288 @@
+Begin Time Thu May 12 00:29:08 CST 2022
+Directory is /home/zijin/pic/Moon/run/inj_3d/03
+                    _            _
+  ___           _  | |        _  \ \   Version : d021d9e-master
+ / __|  _ __   (_) | |  ___  (_)  | |   
+ \__ \ | '  \   _  | | / -_)  _   | |
+ |___/ |_|_|_| |_| |_| \___| |_|  | |  
+                                 /_/    
+ 
+ 
+
+ Reading the simulation parameters
+ --------------------------------------------------------------------------------
+ HDF5 version 1.12.2
+ Python version 3.9.2
+	 Parsing pyinit.py
+	 Parsing d021d9e-master
+	 Parsing pyprofiles.py
+	 Parsing test.py
+  On rank 2 [Python] BlockingIOError: [Errno 11] Unable to create file (unable to lock file, errno = 11, error message = 'Resource temporarily unavailable')
+  On rank 1 [Python] OSError: Unable to create dataset (name already exists)
+	 Parsing pycontrol.py
+	 Check for function preprocess()
+	 python preprocess function does not exist
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 0 PID 216189 RUNNING AT cu03
+=   KILLED BY SIGNAL: 9 (Killed)
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   RANK 1 PID 216190 RUNNING AT cu03
+=   KILLED BY SIGNAL: 6 (Aborted)
+===================================================================================
+End Time Thu May 12 00:29:35 CST 2022
+Begin Time Thu May 12 00:30:41 CST 2022
+Directory is /home/zijin/pic/Moon/run/inj_3d/03
+                    _            _
+  ___           _  | |        _  \ \   Version : d021d9e-master
+ / __|  _ __   (_) | |  ___  (_)  | |   
+ \__ \ | '  \   _  | | / -_)  _   | |
+ |___/ |_|_|_| |_| |_| \___| |_|  | |  
+                                 /_/    
+ 
+ 
+
+ Reading the simulation parameters
+ --------------------------------------------------------------------------------
+ HDF5 version 1.12.2
+ Python version 3.9.2
+	 Parsing pyinit.py
+	 Parsing d021d9e-master
+	 Parsing pyprofiles.py
+	 Parsing test.py
+	 Parsing pycontrol.py
+	 Check for function preprocess()
+	 python preprocess function does not exist
+	 Calling python _smilei_check
+	 Calling python _prepare_checkpoint_dir
+	 Calling python _keep_python_running() :
+[;33m
+[WARNING](0) src/Params/Params.cpp:656 (Params) Patches distribution: hilbertian[0m
+[;33m
+[WARNING](0) src/Params/Params.cpp:1049 (compute) simulation_time has been redefined from 2342.128578 to 2342.126124 to match timestep.[0m
+ 
+
+ Geometry: 3Dcartesian
+ --------------------------------------------------------------------------------
+	 Interpolation order : 2
+	 Maxwell solver : Yee
+	 simulation duration = 2342.126124,   total number of iterations = 415820
+	 timestep = 0.005633 = 0.999000 x CFL,   time resolution = 177.539542
+	 Grid length: 0.625, 1.25, 0.625
+	 Cell length: 0.00976562, 0.00976562, 0.00976562
+	 Number of cells: 64, 128, 64
+	 Spatial resolution: 102.4, 102.4, 102.4
+ 
+
+ Electromagnetic boundary conditions
+ --------------------------------------------------------------------------------
+	 xmin silver-muller, absorbing vector [1, 0, 0]
+	 xmax silver-muller, absorbing vector [-1, -0, -0]
+	 ymin silver-muller, absorbing vector [0, 1, 0]
+	 ymax silver-muller, absorbing vector [-0, -1, -0]
+	 zmin silver-muller, absorbing vector [0, 0, 1]
+	 zmax silver-muller, absorbing vector [-0, -0, -1]
+ 
+
+ Vectorization: 
+ --------------------------------------------------------------------------------
+	 Mode: off
+ 
+
+ Initializing MPI
+ --------------------------------------------------------------------------------
+ 3D built-in profile `constant` (value: 1.000000)
+ 3D built-in profile `constant` (value: 1.000000)
+	 MPI_THREAD_MULTIPLE enabled
+	 Number of MPI processes: 4
+	 Number of threads per MPI process : 24
+ 
+	 Number of patches: 8 x 16 x 8
+	 Number of cells in one patch: 8 x 8 x 8
+	 Dynamic load balancing: never
+ 
+
+ Initializing the restart environment
+ --------------------------------------------------------------------------------
+ 
+ 
+
+ Initializing species
+ --------------------------------------------------------------------------------
+	 
+	 Creating Species #0: solar_electron
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+	 
+	 Creating Species #1: solar_proton
+		 > Pusher: boris
+		 > Boundary conditions: remove remove remove remove remove remove
+		 > Density profile: 3D built-in profile `constant` (value: 0.000000)
+ 
+
+ Initializing External fields
+ --------------------------------------------------------------------------------
+	 External field Bx: 3D from file `LMA_fields_input.h5/Bx`
+	 External field By: 3D from file `LMA_fields_input.h5/By`
+	 External field Bz: 3D from file `LMA_fields_input.h5/Bz`
+	 External field By: 3D built-in profile `constant` (value: 0.228805)
+ 
+
+ Initializing particle injectors
+ --------------------------------------------------------------------------------
+	 
+	 Creating Injector: injector_solar_electron
+		 > Associated species: solar_electron (of index 0)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 1.000000).
+	 
+	 Creating Injector: injector_solar_proton
+		 > Associated species: solar_proton (of index 1)
+		 > Injection from from the side: xmax
+		 > Position initialization: injector_solar_electron
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 3D built-in profile `constant` (value: 1.000000).
+ 
+
+ Initializing Patches
+ --------------------------------------------------------------------------------
+	 First patch created
+		 Approximately 10% of patches created
+		 Approximately 20% of patches created
+		 Approximately 30% of patches created
+		 Approximately 40% of patches created
+		 Approximately 50% of patches created
+		 Approximately 60% of patches created
+		 Approximately 70% of patches created
+		 Approximately 80% of patches created
+		 Approximately 90% of patches created
+	 All patches created
+ 
+
+ Creating Diagnostics, antennas, and external fields
+ --------------------------------------------------------------------------------
+	 Created TrackParticles #0: species solar_electron
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 1.000000)
+	 Created TrackParticles #1: species solar_proton
+		 id,x,y,px,py,pz,Ex,Ey,Ez,Bx,By,Bz,w
+ 3D built-in profile `constant` (value: 1.000000)
+ 
+
+ finalize MPI
+ --------------------------------------------------------------------------------
+	 Done creating diagnostics, antennas, and external fields
+ 
+
+ Minimum memory consumption (does not include all temporary buffers)
+ --------------------------------------------------------------------------------
+              Particles: Master 0 MB;   Max 0 MB;   Global 0 GB
+                 Fields: Master 55 MB;   Max 55 MB;   Global 0.218 GB
+            scalars.txt: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_electron.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_solar_proton.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ 
+
+ Initial fields setup
+ --------------------------------------------------------------------------------
+	 Applying external fields at time t = 0
+	 Applying prescribed fields at time t = 0
+	 Applying antennas at time t = 0
+ 
+
+ Open files & initialize diagnostics
+ --------------------------------------------------------------------------------
+ 
+
+ Running diags at time t = 0
+ --------------------------------------------------------------------------------
+ 
+
+ Species creation summary
+ --------------------------------------------------------------------------------
+		 Species 0 (solar_electron) created with 0 particles
+		 Species 1 (solar_proton) created with 0 particles
+ 
+
+ Expected disk usage (approximate)
+ --------------------------------------------------------------------------------
+	 WARNING: disk usage by non-uniform particles maybe strongly underestimated,
+	    especially when particles are created at runtime (ionization, pair generation, etc.)
+	 
+	 Expected disk usage for diagnostics:
+		 File TrackParticlesDisordered_solar_electron.h5: 446.13 M
+		 File TrackParticlesDisordered_solar_proton.h5: 446.13 M
+		 File scalars.txt: 432.40 K
+	 Total disk usage for diagnostics: 892.68 M
+	 
+ 
+
+ Keeping or closing the python runtime environment
+ --------------------------------------------------------------------------------
+	 Checking for cleanup() function:
+	 python cleanup function does not exist
+	 Keeping Python interpreter alive
+ 
+
+ Time-Loop started: number of time-steps n_time = 415820
+ --------------------------------------------------------------------------------
+[;33m
+[WARNING](0) src/Params/Params.cpp:1381 (print_timestep_headers) The following `push time` assumes a global number of 96 cores (hyperthreading is unknown)[0m
+        timestep       sim time   cpu time [s]   (    diff [s] )   push time [ns]
+    41582/415820     2.3422e+02     7.3503e+02   (  7.3503e+02 )            4796 
+    83164/415820     4.6843e+02     1.5364e+03   (  8.0137e+02 )            2822 
+   124746/415820     7.0264e+02     2.3617e+03   (  8.2528e+02 )            2811 
+   166328/415820     9.3685e+02     3.1901e+03   (  8.2838e+02 )            2809 
+   207910/415820     1.1711e+03     4.0182e+03   (  8.2810e+02 )            2803 
+   249492/415820     1.4053e+03     4.8478e+03   (  8.2966e+02 )            2808 
+   291074/415820     1.6395e+03     5.6776e+03   (  8.2979e+02 )            2804 
+   332656/415820     1.8737e+03     6.5051e+03   (  8.2751e+02 )            2802 
+   374238/415820     2.1079e+03     7.3244e+03   (  8.1933e+02 )            2776 
+   415820/415820     2.3421e+03     8.1297e+03   (  8.0528e+02 )            2731 
+ 
+
+ End time loop, time dual = 2.3421e+03
+ --------------------------------------------------------------------------------
+ 
+
+ Time profiling : (print time > 0.001%)
+ --------------------------------------------------------------------------------
+ Time_in_time_loop	8.1297e+03	9.7798e+01% coverage
+ 	           Particles	8.033194e+02	9.9e+00%
+ 	             Maxwell	3.375818e+02	4.2e+00%
+ 	         Diagnostics	1.383548e+03	1.7e+01%
+ 	          Collisions	1.148057e+01	    <1%
+ 	      Sync Particles	1.747410e+03	2.1e+01%
+ 	         Sync Fields	4.779868e+02	5.9e+00%
+ 	      Sync Densities	1.599143e+03	2.0e+01%
+ 	        Part Merging	9.328054e+00	    <1%
+ 	      Part Injection	1.582231e+03	1.9e+01%
+ 
+	 Printed times are averaged per MPI process
+ 		 See advanced metrics in profil.txt
+ 
+	Diagnostics profile :
+ 		         scalars.txt	4.3e+01
+ 		TrackParticlesDisordered_solar_electron.h5	5.4e+02
+ 		TrackParticlesDisordered_solar_proton.h5	7.9e+02
+ 
+
+ END
+ --------------------------------------------------------------------------------
+End Time Thu May 12 02:46:35 CST 2022

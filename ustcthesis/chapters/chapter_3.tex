@@ -1,0 +1,311 @@
+% !TeX root = ../main.tex
+
+\chapter{PIC simulation of the solar wind interaction with the Lunar magnetic anomalies}
+
+We have carried extensive trial-and-error simulations. With all the physical parameters based on their typical values (no compromise for compution speed), we confirm once again \citep{decaGeneralMechanismDynamics2015, bamford3DPICSIMULATIONS2016} that it is true for LMAs to stand off the solar wind and generate a mini-magnetosphere. After an introduction to our simulation method (including the code implementation and numerical choices in detail), we present the formation process of the mini-magnetosphere in our simulation. The next section focuses on the particle dynamics (electrons and protons). And we end this chapter with a analysis of parameters that have never explored before.
+
+
+\section{Simulation methods}
+
+Various electromagnetic / electrostatic particle-in-cell codes have been applied to study the solar wind interaction wind the Lunar magnetic anomalies, including iPIC3D \citep{decaPlasmaEnvironmentSurrounding2021}; \cite{decaGeneralMechanismDynamics2015}, OSIRIS \citep{bamford3DPICSIMULATIONS2016} and HYBes \citep{dyadechkinNewFullyKinetic2015}.
+
+The iPIC3D is an open-source C++ and MPI code developed by \cite{markidisMultiscaleSimulationsPlasma2010} ten years ago originally for magnetic reconnection research. Utilizing implicit discretization of the Maxwell's and particle motion equations, the code has the advantage to retain the numerical instability over explicit method codes, thus allowing simulation with longer time step and larger grid spacing. However, the current implementation of iPIC3D has considerable load imbalance problems, preventing it scaling to large simulation. What's more, at the time of the code development, standards like openPMD (Open Standard for Particle-Mesh Data Files) and PICMI (Particle-In-Cell Modeling Interface) have not yet been proposed. The code, therefore, lacks the consistency and agility to take advantage of progress in hardware like GPU devices, develop advanced features like mesh refinement and use new numerical schemas. Embarrassingly, the iPIC3D code even failed to compile with most recent version of gcc.
+
+The OSIRIS code which is a closed source code with a proprietary licence and the HYBes code which is an electrostatic simulation code are neither suitable for our case.
+
+In this work, we use the open source code WarpX \citep{vayWarpXNewExascale2018} and Smilei \citep{derouillatSmileiCollaborativeOpensource2018}. Leaded by Lawrence Berkeley National Laboratory, WarpX is a successor and full reimplementation of Warp code in modern C++ with a focus on plasma wakeﬁeld accelerator design. Smilei code, on the other hand, is a collaborative code co-developed by physicists and HPC experts, leaded by Maison de la Simulation laboratory. They are both advanced electromagnetic particle-in-cell code developed in recent years to meet the exascale challenge and they contains many physics modules to applies to a wide range of studies. Detailed documentations and codes implementation can be found on their website. Here I just list a few features of these codes that is important in our study.
+
+(1). Load balancing: by decomposing the whole simulation domain into independent sub-domains (called grids in WarpX and patchs in Smilei), the codes can handle massive parallelization and and achieve dynamic load balancing by transfering subdomains to different computing units (MPI processes).
+
+(2). Particle injection \& open boundary conditions: in the case of modeling solar wind interaction with the Moon, solar wind particles are injected into the simulation continously and absorbed (removed) when they encoutner the Moon surface. Open boundaries may approximate the realistic interaction on the surface while reflective or periodic boundary condition may introduce unphysical phenomena and influence the whole evolution of the simulation as demonstrated later in our study.
+
+(3). External fields: to describe the charged particles' dynamics in lunar magnetic anomalies regions, a given electromagnetic field representing the LMAs configuration is required to push the particles. And it is worth further research whether this preconfigured electromagnetic field needs to participate in the Maxwell solver or not. \cite{decaGeneralMechanismDynamics2015} argued that the most stable evolution for the LMA problem are obtained under “fixed” field BCs conditions where the fields E and B are fixed to their initial value. However, such boundaries conditions are in contradiction of the exact  solution of Maxwell's equation, making the simulation not self-consistent. One of the most important advantages for PIC method is its self-consistency. In our study, we found that this setting can have much bigger influence  in simulations with a realistic plasma parameter than previously thought by \cite{decaGeneralMechanismDynamics2015}.
+
+As discussed in the earlier section, modeling the LMA field from observations is a challenge itself. Our work focus on the general mechanism between LMA and solar wind, thus we simplify our simulation to use a dipole model representing lunar crustal magnetic field, which is a good approximation in small-scale anomaly areas. Note,  \cite{decaPlasmaEnvironmentSurrounding2021} use real observation data of magnetic field from the Kaguya and Lunar Prospector missions as input to study the plasma environment near the Reiner Gamma anomaly and their results are consistent with the solar wind standoff model. Our PIC simulation incorporate an external dipole magnetic field component
+
+$$\boldsymbol{B}_{m}(\boldsymbol{r})=\frac{\mu_{0}}{4 \pi}\left(\frac{3\left(\boldsymbol{m} \cdot\left(\boldsymbol{r}-\boldsymbol{r}_{0}\right)\right)\left(\boldsymbol{r}-\boldsymbol{r}_{0}\right)}{\left(r-r_{0}\right)^{5}}-\frac{\boldsymbol{m}}{\left(r-r_{0}\right)^{3}}\right)$$
+
+This dipole magnetic field is superimposed on the plasma electromagnetic field. This constant field can be initialized at first as a component of the whole self-consistent magnetic field, or can be directly applied to push the particles with no participation in the PIC's Maxwell solver. Though this latter setting makes the simulation not self-consistent, it is useful to describe charged particles' dynamics in a given electromagnetic field. And our simulation demonstrate no obvious dispartion of these two options. On the solar wind incident side, the dipole magnetic fields become very weak compared to the interplanetary magnetic field. On the lunar surface, the situation reverse and the strong local magnetic fields have a dominant effect on the motion of the solar wind.
+
+In our simulation, the interplanetary magnetic field direction is opposite to the dipole magnetic field along the line y = 0, z = 0. This setting creating a zero-point in the total magnetic field configuration at 0.8 di above the surface.
+
+We also adopt an isothermal solar wind plasma model as the injection species of the simulation. Their bulk velocity, density and temperature are in the regime of typical solar wind conditions. And the proton-to-electron mass ratio used in the simulation is the realistic value of $m_{proton}/m_{electron} = 1836$
+
+For reference purpose following physical and numerical parameters are used throughout all our simulations: the solar wind density is set as $n_{solar} = 5 cm^{-3}$, corresponding to an ion inertial length $d_i = 100 km $; the protons and electrons share a same temperatures of $T_{sw} = T_i = T_e = 35 eV$ and a bulk velocity speed $v_{sw} =400km \cdot s^{-1}$.
+
+
+Boundary conditions have a significant impact on the simulation results. Implementing an universal open boundary condition satisfying any the physical condition are unfortunately impractical and impossible. Our simulation use the perfectly matched layer (PML) in all the simulation boundaries. This boundary is commonly used to simulate problems with open boundaries, especially in the FDTD and FE methods. It actes as a absorber for wave equations, well designed so that waves incident upon the PML do not reflect at the interface. Other open boundaries includes silver-muller for injecting electromagnetic field and ramp condition for the spectral solver in cylindrical geometry. For our work, we do not need to inject other electromagnetic field besides the interplanetary magnetic field and the geometry shows no favors for cylindrical shape. Therefore, we adopt the PML boundary condition, though using silver-muller boundary condition may possibly help accelerate the computation speed.
+
+Computation code offen benefits when physical quantities typically having a wide range of magnitudes, are scaled (close) to order 1. WarpX and Smilei PIC code is no exception. Maxwell's electromagnetic equations and motion equations of individual quasi-particles (Vlasov's equations) take the form under nature units while other quantities are normalized to reference quantities such as the speed of light for velocity, the elementary charge for charge and the electron mass for mass. So PIC codes only handle dimensionless variables. Besides the benifit in numerical stability and computational speed, the normalized simulation result can be applied to various physical systems, as long as the dimensionless variables are identical.
+
+
+\section{Mini-magnetosphere structure}
+
+Figure \ref{fig:06++_e}, \ref{fig:06++_p} shows the density evolution of electrons and protons as the solar wind plasma impacts a localized crustal magnetic field structure. We also draw  the net charge density (Figure \ref{fig:06++_density}) which has been converted to the unit of number density (in other words, proton density minus electron number) for comparison with the particle density. Non-zero net density can be clearly identied in Figure \ref{fig:06++_density} after the simulation begins and the plasma comes into a neutral balance after the formation of the mini-magnetosphere.
+
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt020370_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt040740_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt061110_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt081480_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt101850_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt122220_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt142590_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt162960_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt183330_Slice_z_density_electron}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt203700_Slice_z_density_electron}}
+  \caption{Electron number density}\label{fig:06++_e}
+\end{figure}
+
+\begin{figure}
+  \centering
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt020370_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt040740_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt061110_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt081480_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt101850_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt122220_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt142590_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt162960_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt183330_Slice_z_density_proton}}
+    {\includegraphics[width=0.19\textwidth]{06++/density/plt203700_Slice_z_density_proton}}
+  \caption{Proton number density}\label{fig:06++_p}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt020370_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt040740_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt061110_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt081480_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt101850_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt122220_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt142590_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt162960_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt183330_Slice_z_density}}
+  {\includegraphics[width=0.19\textwidth]{06++/density/plt203700_Slice_z_density}}
+  \caption{Net number density (prton density - electron density)}\label{fig:06++_density}
+\end{figure}
+
+As the solar wind impinges towards the lunar surface, both the proton and electron populations drift perpendicular to the magnetic field: some are deflected toward the cusp regions of the magnetic dipole and some are reflected upstream. A density cavity is observed in the simulation box, surrounded by a higher density halo. This result is consistent with simulations performed by \cite{decaGeneralMechanismDynamics2015} and \cite{bamford3DPICSIMULATIONS2016}. This structure has the similar effect of magnetosphere in affecting charged particles, and it is called mini-magnetosphere \citep{saitoSimultaneousObservationElectron2012}, \cite{linLunarSurfaceMagnetic1998}. This small-scale high density region is formed because the solar wind particles are temporarily packed against the dipole field. The halo has its highest point about 25 km (0.25 $d_i$) above the lunar surface, has a thickness about 10 km (0.1 $ d_i$) and has a maximum density approximately  14 $cm^{-3}$, 12.4 times the solar wind value. The narrow boundary of the mini-magnetosphere is not smooth due to waves, turbulence, and instabilities . The density varies both towards the surface and parallel to the surface. In regions between magnetic cusps, both electron and proton have their lowest density and the surface is well shielded from the solar wind. No bow shock structure similar to the earth's bow shock is observed, this may be attributed to the small length scale of the interaction region compared with the gyro-radiii of the ions \cite{kallioKineticSimulationsFinite2012}. Particles' speeds are high enough before their motion are significantly modified by the halo region and the dipole magnetic field, so no stationary shock can exist.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt020370_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt040740_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt061110_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt081480_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt101850_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt122220_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt142590_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt162960_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt183330_Slice_z_Ex}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt203700_Slice_z_Ex}}
+  \caption{Electric field in direction x}\label{fig:06++_Ex}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt020370_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt040740_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt061110_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt081480_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt101850_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt122220_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt142590_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt162960_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt183330_Slice_z_Ey}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt203700_Slice_z_Ey}}
+  \caption{Electric field in direction y}\label{fig:06++_Ey}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt020370_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt040740_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt061110_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt081480_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt101850_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt122220_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt142590_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt162960_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt183330_Slice_z_Ez}}
+  {\includegraphics[width=0.19\textwidth]{06++/E/plt203700_Slice_z_Ez}}
+  \caption{Electric field in direction z}\label{fig:06++_Ez}
+\end{figure}
+
+Only the electron population is effectively magnetized in the vast region of the simulation box, whereas the ions are only magnetized near the lunar surface, give the gyro-radii of the electrons and protons at the halo location are 300 m and 100 km. The ions could easily penetrate the density halo and create a charge separtion with the electrons. This separtion, in turn, creates a large electric field. This electric field's main direction lies in the x-z plane (see Figure \ref{fig:06++_Ex}, \ref{fig:06++_Ey}, \ref{fig:06++_Ez}). The large normal electric field with the magnitude of 100 mV/m exist to decelerate ions and accelerate electrons. Also the large electric fields in the cusp regions perpendicular to the solar wind flow acts to deflect the charged particles motion towards the cusp regions. Because in theory \citep{bamfordMinimagnetospheresLunarSurface2012}, the electric field is proportional to the gradient in the magnetic field intensity, the particles scattering can be seen to be omnidirectionally pointing outward, regardless of the magnetic field orientation. In conclusion, the formation of the mini-magnetosphere is mainly an electrostatic effect due to the charge separation. Note this magnitude of 100 mV/m is larger than the values obtained by \cite{decaGeneralMechanismDynamics2015} (75 mV/m), but since they use an ion-to-electron mass ratio of mi/me = 256, lower values in their model are to be expected.
+
+
+\section{Proton and Electron dynamics}
+
+Both the electron and proton population is significantly heated in directions perpendicular to the dipole axis. The electron population is accelerated in the -Z direction while However, no statistical desperation from initial can be observed in directions parallel to the dipole moment from Figure.
+
+The electron population is accelerated in the -Z direction near the lunar surface and the proton population is accelerated in the +Z direction. \cite{decaGeneralMechanismDynamics2015} evaluate the effects of the magnetic $\nabla B$ + curvature drift $v_B$ and the electric drift $v_E$. The electric field drift is prevalent by an order of magnitude for the electron population, thus formally dominating an overall motion of the electrons in the electrosheath toward the -Z direction. On the other side, the much heavier protons' flow speed $v_{sw}$ much largger than their velocity speed $v_{th,i}$. The magnetic drift component surpass the electric field drift in this case.
+
+$$\boldsymbol{v}_{B}=\frac{m v_{\perp}^{2}}{2 e B^{3}}(\boldsymbol{B} \times \nabla B)+\frac{m v_{\|}^{2}}{e R_{C}^{2} B^{2}}\left(\boldsymbol{R}_{c} \times \boldsymbol{B}\right)$$
+
+$$\boldsymbol{v}_{E}=\left(1+\frac{1}{4} r_{s}^{2} \nabla^{2}\right) \frac{\boldsymbol{E} \times \boldsymbol{B}}{B^{2}}$$
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt020370_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt040740_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt061110_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt081480_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt101850_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt122220_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt142590_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt162960_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt183330_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt203700_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  \caption{Electron momentum in direction x}\label{fig:06++_e_vx}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt020370_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt040740_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt061110_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt081480_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt101850_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt122220_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt142590_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt162960_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt183330_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt203700_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  \caption{Electron momentum in direction x}\label{fig:06++_e_vy}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt020370_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt040740_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt061110_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt081480_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt101850_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt122220_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt142590_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt162960_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt183330_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/electron/plt203700_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  \caption{Electron momentum in direction x}\label{fig:06++_e_vz}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt020370_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt040740_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt061110_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt081480_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt101850_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt122220_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt142590_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt162960_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt183330_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt203700_2d-Profile_particle_position_x_particle_momentum_x_particle_weight.png}}
+  \caption{Proton momentum in direction x}\label{fig:06++_p_vx}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt020370_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt040740_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt061110_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt081480_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt101850_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt122220_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt142590_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt162960_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt183330_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt203700_2d-Profile_particle_position_x_particle_momentum_y_particle_weight.png}}
+  \caption{Proton momentum in direction x}\label{fig:06++_p_vy}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt020370_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt040740_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt061110_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt081480_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt101850_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt122220_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt142590_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt162960_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt183330_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  {\includegraphics[width=0.19\textwidth]{06++/proton/plt203700_2d-Profile_particle_position_x_particle_momentum_z_particle_weight.png}}
+  \caption{Proton momentum in direction x}\label{fig:06++_p_vz}
+\end{figure}
+
+One interesting thing to notice in our simulation is that the when the plasma is far away from the lunar surface electrons population is accelerated in the +Z direction, whereas the proton has no corresponding acceleration (see Figure \ref{fig:06++_e_m} \ref{fig:06++_p_m}). The interplanetary magnetic field may be the possible cause for this strange phenomena as the electrons are magnetized even in the weak IMF field. However, other mechanisms like anisotropic heating may also attribute to the modified velocity distribution. The detailed reason needs further examination and a parametric study about the direction and magnitude of the IMF magnetic fields can help provide insight into this.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.3\textwidth]{06++/electron/Time_1d-Profile_particle_position_x_particle_momentum_x}}
+  {\includegraphics[width=0.3\textwidth]{06++/electron/Time_1d-Profile_particle_position_x_particle_momentum_y}}
+  {\includegraphics[width=0.3\textwidth]{06++/electron/Time_1d-Profile_particle_position_x_particle_momentum_z}}
+\caption{Averaged electron momentum (x,y,z direction) vs time plot}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.3\textwidth]{06++/proton/Time_1d-Profile_particle_position_x_particle_momentum_x}}
+  {\includegraphics[width=0.3\textwidth]{06++/proton/Time_1d-Profile_particle_position_x_particle_momentum_y}}
+  {\includegraphics[width=0.3\textwidth]{06++/proton/Time_1d-Profile_particle_position_x_particle_momentum_z}}
+\caption{Averaged proton momentum (x,y,z direction) vs time plot}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.3\textwidth]{06++/electron/Last_1d-Profile_particle_position_x_particle_momentum_x}}
+  {\includegraphics[width=0.3\textwidth]{06++/electron/Last_1d-Profile_particle_position_x_particle_momentum_y}}
+  {\includegraphics[width=0.3\textwidth]{06++/electron/Last_1d-Profile_particle_position_x_particle_momentum_z}}
+\caption{Averaged electron momentum (x,y,z direction) plot (zoom into the last timestep)}
+\label{fig:06++_e_m}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.3\textwidth]{06++/proton/Last_1d-Profile_particle_position_x_particle_momentum_x}}
+  {\includegraphics[width=0.3\textwidth]{06++/proton/Last_1d-Profile_particle_position_x_particle_momentum_y}}
+  {\includegraphics[width=0.3\textwidth]{06++/proton/Last_1d-Profile_particle_position_x_particle_momentum_z}}
+\caption{Averaged proton momentum (x,y,z direction) plot (zoom into the last timestep)}
+\label{fig:06++_p_m}
+\end{figure}
+
+\section{Parametric analysis}
+
+In the last part, we perform comparative experiments to study: (a) the individual influence of surface and dipole, (b) the evolution time scale, (c) numerical setting and algorithm effect on the simulation. These experiment does not extend to explore all the parameter space: they are carried out essentially to determine the important physical processes of the interaction between the solar wind and lunar magnetic anomalies. \cite{decaGeneralMechanismDynamics2015} discuss the influence of both the IMF and solar wind direction/strength on the macroscopic structure of the minimagnetosphere with a particular focus on how the shielding efficiency changes with changing solar wind conditions. And they conclude that the solar wind-LMA interaction  are highly dependent on the features of the lunar and upstream plasma environment. Similar to Deca's work, \cite{bamford3DPICSIMULATIONS2016} have analyzed parametrically the influence of the magnetic dipole configuration and the solar wind plasma Alfvén Mach parameter. We expect similar results can also be obtained, varing the magnetic dipole and enviromental plasma. And benefiting from the advances in computation power and parallel algorithm \citep{zhangAMReXFrameworkBlockstructured2019}, \cite{zhangAMReXBlockstructuredAdaptive2021}, conducting parametric analysis is much more feasible and cheaper than the past.
+
+
+\subsection{The influence of the lunar surface and the magnetic dipole}
+
+The whole interaction is determined among three components: the solar wind, the lunar surface and the magnetic dipole buried underneath. Past studies \citep{decaGeneralMechanismDynamics2015}, \cite{bamford3DPICSIMULATIONS2016} couple the dipole and the lunar surface. However, they have different role when acting on the solar wind: the magnetic dipole is responsible for changing charged particles motion; the lunar surface, on the other hand, absorbes the impacting particles. Both of them can modify the particle phase distribution and therefore influence the whole interaction picture. The magnetic field of the dipole bring continuous changes in the particles phase space across the area; in contrast, the lunar surface introduce abrupt breaks in the particles distribution. The abrupt change is very important for the near surface area, but is hard for the simulation to capture reasonly (more details can be found in the Appendix A).
+
+We perform three experiments: one with both the lunar surface and magnetic dipole, one without the magnetic dipole, one without the absorbing surface, keeping the solar wind parameters and all numerical setting unchanged. The result of the one without the the magnetic dipole is quite boring. Plasma just flow through nearly all the simulation box unchanged, only small deviations can be absorded at the boundary cells. For the remaining two experiments, we find that although a mini-magnetosphere structure emerge in both case, the case without lunar surface exhits a more obvious asymmetry both in the space and between the particle population. The near lunar surface micro-structure and surface effects is the subject of future work.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.55\textwidth]{surface/00/plt107364_Slice_z_density}}
+  {\includegraphics[width=0.4\textwidth]{surface/01/plt067903_Slice_z_density}}
+\caption{Influence of the lunar surface and the magnetic dipole}
+\end{figure}
+
+\subsection{The evolution time scale of the solar wind-Moon interaction}
+
+Changing the duration of the simulation (see Figure \ref{fig:evolution}), we find the overall picture remains almost identical throughout time after the mini-magnetosphere is formed. And the formation time for the mini-magnetosphere is within the order of seconds. This result is encouraging for future simulations because it means that we do not have to include the time accumulation effect of the interaction as the Moon rotates around the Earth and the Sun. Though the Moon will encounter plasma of different regimes impacting the lunar surface with various angles, we can safely assure ourselves that the simulations will give reasonable and comparable results under time fixed settings. 
+
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.45\textwidth]{06+++/plt071298_Slice_z_density}}
+  {\includegraphics[width=0.45\textwidth]{06+++/plt213894_Slice_z_density}}
+\caption{Density evolution at 1.5 and 3.5 times the solar wind flow time}\label{fig:evolution}
+\end{figure}
+
+\subsection{Numercial effect on the simulation}
+
+Lastly we provides results with different numerical parameters, including the number of cells, the number of particles in one cell and the particle shape in PIC algorithms. We find that the spatial resolution is the most important factor to successfully simulate the mini-magnetosphere structure. No obvious changes happen in the general interaction although a higher number of particles in one cell and a higher-order of the shape factors (splines) for the macro-particles can undoubtedly improve the simulation accuracy. The computation cost accompanied with the improvements, however, is a tradeoff one has to consider when performing simulation.

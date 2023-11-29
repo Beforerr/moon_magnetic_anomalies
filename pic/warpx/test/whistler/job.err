@@ -1,0 +1,4 @@
+/home/zijin/mambaforge/envs/warpx/lib/python3.10/site-packages/plasmapy/utils/decorators/checks.py:1396: RelativityWarning: thermal_speed is yielding a velocity that is 8.839% of the speed of light. Relativistic effects may be important.
+  warnings.warn(
+/home/zijin/mambaforge/envs/warpx/lib/python3.10/site-packages/plasmapy/utils/decorators/checks.py:1396: RelativityWarning: thermal_speed is yielding a velocity that is 15.309% of the speed of light. Relativistic effects may be important.
+  warnings.warn(

@@ -1,0 +1,8 @@
+0::Assertion `interp_order <= WarpX::nox' failed, file "/home/conda/feedstock_root/build_artifacts/warpx_1650442353453/work/Source/Diagnostics/ReducedDiags/FieldProbe.cpp", line 159, Msg: 
+### ERROR   : Field probe interp_order should be less than or equal to
+#            algo.particle_shape
+ !!!
+SIGABRT
+/usr/bin/addr2line: '/home/zijin/pic/warpx/run_2d/06_ext/warpx.2d.NOMPI.OMP.DP.OPMD.PSATD.QED': No such file
+/usr/bin/addr2line: '/home/zijin/pic/warpx/run_2d/06_ext/warpx.2d.NOMPI.OMP.DP.OPMD.PSATD.QED': No such file
+See Backtrace.0.0 file for details

@@ -1,0 +1,10 @@
+
+figures/
+diags/
+
+*.pvti
+*.vti
+
+.DS_Store
+
+__pycache__/

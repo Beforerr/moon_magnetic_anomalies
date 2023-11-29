@@ -1,0 +1,4 @@
+(?d)*.{h5,txt,vti,pmd,pvti,pyc,DS_Store}
+core*
+**plotfiles
+{DATA,CELL}*

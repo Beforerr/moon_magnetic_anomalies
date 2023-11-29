@@ -1,0 +1,285 @@
+                    _            _
+  ___           _  | |        _  \ \   Version : ??-??
+ / __|  _ __   (_) | |  ___  (_)  | |   
+ \__ \ | '  \   _  | | / -_)  _   | |
+ |___/ |_|_|_| |_| |_| \___| |_|  | |  
+                                 /_/    
+ 
+ 
+
+ Reading the simulation parameters
+ --------------------------------------------------------------------------------
+ HDF5 version 1.12.2
+ Python version 3.9.12
+	 Parsing pyinit.py
+	 Parsing ??-??
+	 Parsing pyprofiles.py
+	 Parsing tst1d_15_particle_injection.py
+	 Parsing pycontrol.py
+	 Check for function preprocess()
+	 python preprocess function does not exist
+	 Calling python _smilei_check
+	 Calling python _prepare_checkpoint_dir
+	 Calling python _keep_python_running() :
+[;33m
+[WARNING](0) src/Params/Params.cpp:638 (Params) Resources allocated 24 underloaded regarding the total number of patches 16[0m
+[;33m
+[WARNING](0) src/Params/Params.cpp:656 (Params) Patches distribution: hilbertian[0m
+[;33m
+[WARNING](0) src/Params/Params.cpp:1048 (compute) simulation_time has been redefined from 2.897406 to 2.893001 to match timestep.[0m
+ 
+
+ Geometry: 1Dcartesian
+ --------------------------------------------------------------------------------
+	 Interpolation order : 2
+	 Maxwell solver : Yee
+	 simulation duration = 2.893001,   total number of iterations = 202
+	 timestep = 0.014322 = 0.950000 x CFL,   time resolution = 69.823680
+	 Grid length: 7.71869
+	 Cell length: 0.0150756, 0, 0
+	 Number of cells: 512
+	 Spatial resolution: 66.3325
+ 
+
+ Electromagnetic boundary conditions
+ --------------------------------------------------------------------------------
+	 xmin silver-muller, absorbing vector [1]
+	 xmax silver-muller, absorbing vector [-1]
+ 
+
+ Vectorization: 
+ --------------------------------------------------------------------------------
+	 Mode: off
+ 
+
+ Initializing MPI
+ --------------------------------------------------------------------------------
+ 1D built-in profile `constant` (value: 32.000000)
+ 1D built-in profile `constant` (value: 32.000000)
+ 1D built-in profile `constant` (value: 32.000000)
+ 1D built-in profile `constant` (value: 32.000000)
+	 MPI_THREAD_MULTIPLE enabled
+	 Number of MPI processes: 1
+	 Number of threads per MPI process : 24
+ 
+	 Number of patches: 16
+	 Number of cells in one patch: 32
+	 Dynamic load balancing: never
+ 
+
+ Initializing the restart environment
+ --------------------------------------------------------------------------------
+ 
+ 
+
+ Initializing species
+ --------------------------------------------------------------------------------
+	 
+	 Creating Species #0: pon1
+		 > Pusher: boris
+		 > Boundary conditions: remove remove
+		 > Density profile: 1D built-in profile `trapezoidal` (value: 1.000000, xvacuum: 0.000000, xplateau: 0.964836, xslope1: 0.000000, xslope2: 0.000000)
+	 
+	 Creating Species #1: eon1
+		 > Pusher: boris
+		 > Boundary conditions: remove remove
+		 > Density profile: 1D built-in profile `trapezoidal` (value: 1.000000, xvacuum: 0.000000, xplateau: 0.964836, xslope1: 0.000000, xslope2: 0.000000)
+	 
+	 Creating Species #2: pon2
+		 > Pusher: boris
+		 > Boundary conditions: remove remove
+		 > Density profile: 1D built-in profile `trapezoidal` (value: 1.000000, xvacuum: 6.753854, xplateau: 7.718690, xslope1: 0.000000, xslope2: 0.000000)
+	 
+	 Creating Species #3: eon2
+		 > Pusher: boris
+		 > Boundary conditions: remove remove
+		 > Density profile: 1D built-in profile `trapezoidal` (value: 1.000000, xvacuum: 6.753854, xplateau: 7.718690, xslope1: 0.000000, xslope2: 0.000000)
+ 
+
+ Initializing particle injectors
+ --------------------------------------------------------------------------------
+	 
+	 Creating Injector: injector0
+		 > Associated species: pon1 (of index 0)
+		 > Injection from from the side: xmin
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Number density profile defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 1D built-in profile `constant` (value: 32.000000).
+	 
+	 Creating Injector: injector1
+		 > Associated species: eon1 (of index 1)
+		 > Injection from from the side: xmin
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Number density profile defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 1D built-in profile `constant` (value: 32.000000).
+	 
+	 Creating Injector: injector2
+		 > Associated species: pon2 (of index 2)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Number density profile defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 1D built-in profile `constant` (value: 32.000000).
+	 
+	 Creating Injector: injector3
+		 > Associated species: eon2 (of index 3)
+		 > Injection from from the side: xmax
+		 > Position initialization defined as the species.
+		 > Position initialization: random
+		 > Momentum initialization defined as the species.
+		 > Momentum initialization: maxwell-juettner
+		 > Mean velocity defined as the species.
+		 > Temperature defined as the species.
+		 > Number density profile defined as the species.
+		 > Time profile: 1D built-in profile `tconstant` (0.000000)
+		 > Particles per cell defined as the associated species: 1D built-in profile `constant` (value: 32.000000).
+ 
+
+ Initializing Patches
+ --------------------------------------------------------------------------------
+	 First patch created
+		 Approximately 10% of patches created
+		 Approximately 20% of patches created
+		 Approximately 30% of patches created
+		 Approximately 40% of patches created
+		 Approximately 50% of patches created
+		 Approximately 60% of patches created
+		 Approximately 70% of patches created
+		 Approximately 80% of patches created
+		 Approximately 90% of patches created
+	 All patches created
+ 
+
+ Creating Diagnostics, antennas, and external fields
+ --------------------------------------------------------------------------------
+	 Created TrackParticles #0: species eon1
+		 id,x,px,py,pz,weight
+ 1D built-in profile `constant` (value: 32.000000)
+ 
+
+ finalize MPI
+ --------------------------------------------------------------------------------
+	 Done creating diagnostics, antennas, and external fields
+ 
+
+ Minimum memory consumption (does not include all temporary buffers)
+ --------------------------------------------------------------------------------
+              Particles: Master 0 MB;   Max 0 MB;   Global 0.000336 GB
+                 Fields: Master 0 MB;   Max 0 MB;   Global 5.73e-05 GB
+            scalars.txt: Master 0 MB;   Max 0 MB;   Global 0 GB
+ TrackParticlesDisordered_eon1.h5: Master 0 MB;   Max 0 MB;   Global 0 GB
+ 
+
+ Initial fields setup
+ --------------------------------------------------------------------------------
+	 Solving Poisson at time t = 0
+ 
+
+ Initializing E field through Poisson solver
+ --------------------------------------------------------------------------------
+	 Poisson solver converged at iteration: 517, relative err is ctrl = 0.000000 x 1e-14
+	 Poisson equation solved. Maximum err = 0.000000 at i= -1
+ Time in Poisson : 0.002254
+	 Applying external fields at time t = 0
+	 Applying prescribed fields at time t = 0
+	 Applying antennas at time t = 0
+ 
+
+ Open files & initialize diagnostics
+ --------------------------------------------------------------------------------
+ 
+
+ Running diags at time t = 0
+ --------------------------------------------------------------------------------
+ 
+
+ Species creation summary
+ --------------------------------------------------------------------------------
+		 Species 0 (pon1) created with 2048 particles
+		 Species 1 (eon1) created with 2048 particles
+		 Species 2 (pon2) created with 2048 particles
+		 Species 3 (eon2) created with 2048 particles
+ 
+
+ Expected disk usage (approximate)
+ --------------------------------------------------------------------------------
+	 WARNING: disk usage by non-uniform particles maybe strongly underestimated,
+	    especially when particles are created at runtime (ionization, pair generation, etc.)
+	 
+	 Expected disk usage for diagnostics:
+		 File TrackParticlesDisordered_eon1.h5: 1.32 M
+		 File scalars.txt: 182.83 K
+	 Total disk usage for diagnostics: 1.50 M
+	 
+ 
+
+ Keeping or closing the python runtime environment
+ --------------------------------------------------------------------------------
+	 Checking for cleanup() function:
+	 python cleanup function does not exist
+	 Closing Python
+ 
+
+ Time-Loop started: number of time-steps n_time = 202
+ --------------------------------------------------------------------------------
+[;33m
+[WARNING](0) src/Params/Params.cpp:1381 (print_timestep_headers) The following `push time` assumes a global number of 24 cores (hyperthreading is unknown)[0m
+  timestep       sim time   cpu time [s]   (    diff [s] )   push time [ns]
+    20/202     2.9360e-01     3.3731e-02   (  3.3731e-02 )            3808 
+    40/202     5.8003e-01     7.2250e-02   (  3.8519e-02 )            3542 
+    60/202     8.6647e-01     9.2161e-02   (  1.9911e-02 )            1543 
+    80/202     1.1529e+00     1.1234e-01   (  2.0180e-02 )            1352 
+   100/202     1.4393e+00     1.3229e-01   (  1.9947e-02 )            1177 
+   120/202     1.7258e+00     1.5301e-01   (  2.0719e-02 )            1092 
+   140/202     2.0122e+00     1.7377e-01   (  2.0760e-02 )             989 
+   160/202     2.2986e+00     1.9455e-01   (  2.0786e-02 )             903 
+   180/202     2.5851e+00     2.1609e-01   (  2.1533e-02 )             859 
+   200/202     2.8715e+00     2.3763e-01   (  2.1544e-02 )             795 
+ 
+
+ End time loop, time dual = 2.9002e+00
+ --------------------------------------------------------------------------------
+ 
+
+ Time profiling : (print time > 0.001%)
+ --------------------------------------------------------------------------------
+ Time_in_time_loop	2.3981e-01	9.0640e+01% coverage
+ 	           Particles	3.749630e-02	1.6e+01%
+ 	             Maxwell	1.125212e-03	    <1%
+ 	         Diagnostics	9.317392e-02	3.9e+01%
+ 	           Densities	7.296360e-04	    <1%
+ 	          Collisions	2.430779e-03	1.0e+00%
+ 	          Mov window	3.193970e-04	    <1%
+ 	      Sync Particles	4.332779e-02	1.8e+01%
+ 	         Sync Fields	2.080722e-03	    <1%
+ 	      Sync Densities	9.055834e-03	3.8e+00%
+ 	        Part Merging	1.622188e-03	    <1%
+ 	      Part Injection	2.446241e-02	1.0e+01%
+ 
+	 Printed times are averaged per MPI process
+ 		 See advanced metrics in profil.txt
+ 
+	Diagnostics profile :
+ 		         scalars.txt	3.3e-02
+ 		TrackParticlesDisordered_eon1.h5	5.7e-02
+ 
+
+ END
+ --------------------------------------------------------------------------------

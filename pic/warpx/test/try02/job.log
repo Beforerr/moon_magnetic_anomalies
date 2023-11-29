@@ -1,0 +1,37 @@
+OMP initialized with 24 OMP threads
+AMReX (22.04) initialized
+WarpX (22.04-nogit)
+PICSAR (e7ef03b852b8)
+Level 0: dt = 2.343302713e-06 ; dx = 994.4858492 ; dz = 994.4858492
+
+Grids Summary:
+  Level 0   8 grids  8192 cells  100 % of domain
+            smallest grid: 32 x 32  biggest grid: 32 x 32
+
+-------------------------------------------------------------------------------
+--------------------------- MAIN EM PIC PARAMETERS ----------------------------
+-------------------------------------------------------------------------------
+Geometry:             | 2D (XZ)
+Operation mode:       | Electromagnetic
+                      | - vacuum
+-------------------------------------------------------------------------------
+Current Deposition:   | Esirkepov 
+Particle Pusher:      | Boris 
+Charge Deposition:    | standard 
+Field Gathering:      | energy-conserving 
+Particle Shape Factor:| 1
+-------------------------------------------------------------------------------
+Maxwell Solver:       | Yee 
+                      | - staggered mode 
+Guard cells           | - ng_alloc_EB = (2,2)
+ (allocated for E/B)  | 
+-------------------------------------------------------------------------------
+--- INFO    : Writing plotfile ./diags/plotfiles/plt000000
+
+
+**** WARNINGS ******************************************************************
+* GLOBAL warning list  after  [ FIRST STEP ]
+*
+* No recorded warnings.
+********************************************************************************
+

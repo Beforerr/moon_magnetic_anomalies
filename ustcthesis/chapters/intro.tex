@@ -1,0 +1,103 @@
+% !TeX root = ../main.tex
+
+\chapter{Introduction}
+
+Last 20 years has witnessed a renewed interest in human exploration of the Moon: the number of related missions has exploded (Kaguya, Chang'E, Lunar Reconnaissance Orbiter, Chandrayaan, to name a few) and NASA has just launched a new program Artemis with the aim to send human back to the Moon \citep{nasaNASALunarExploration2020, nasaNASAStrategicPlan2018}. To successfully setting humanity on a sustainable course to the Moon, a detailed understanding of the lunar plasma environment is a must for spacecraft engineers to estimates the electromagnetic and plasmas impact on landing missions. Moreover, with no significant global magnetic field and atmosphere, the Moon represents a special class of plasma interactions with solar system bodies according to the M-B diagram \citep{barabashClassesSolarWind2012}. The majority of the solar wind directly hit the lunar surface and magnetic field can not be induced due to  the insulating nature of surface material. From this respective, the Moon can be considered as a passive absorber with most impinging plasma being absorbed or neutralized. However, observations from the recent missions have revealed a much more complex and fascinating Moon-plasma interaction with a variety of processes  such as surface sputtering, solar wind scattering and even the formation of mini-magnetosphere. Because of the small system scales of the interaction areas compared with the large gyro-scale of heavy ions, many of the physical processes have a fundamentally kinetic features, generating unstable particles distributions and triggering plasma instabilities. The Moon, thus, provides us a natural laboratory to study these instabilities and wave-particle interactions in the special plasma regime.
+
+In this paper, we provide an brief introduction in the area of solar wind interaction with the Moon and present a detailed simulation of the interaction between the Moon's magnetic anomalies and the solar wind. We also try to point out a a few interesting observation of the simulation result and discuss future directions.
+
+
+
+\section{Lunar plasma environment}
+
+The Moon makes a complete orbit around Earth in 27 Earth days with an orbital radius of 240,000 miles (385,000km, $\sim 60 R_E$). By comparison, the magnetosphere of Earth extends 6 to 10 times the radius of Earth on the Sun-facing side and stretches out into an immense magnetotail of hundreds of Earth radii on the nightside. So along its way, the Moon will passes through different regions including solar wind, bow shock, magnetosheath, the magnetotail lobes, and the plasma sheet. These regions differ in solar radiation and plasma condition and one could expect various interaction may happen between the Moon and the impinging plasma. In this thesis, we focused on the solar wind interaction with the dayside lunar surface because the Moon spends most of its time in the solar wind. We refer interesting reader to other literature \citep{haradaInteractionsEarthMagnetotail2015} to understand the interactions of Earth's magnetotail plasma and the Moon.
+
+
+The Moon makes a complete orbit around Earth in 27 Earth days with an orbital radius of 240,000 miles (385,000km, $\sim 60 R_E$). By comparison, the magnetosphere of Earth extends 6 to 10 times the radius of Earth on the Sun-facing side and stretches out into an immense magnetotail of hundreds of Earth radii on the nightside. So along its way, the Moon will passes through different regions including solar wind, bow shock, magnetosheath, the magnetotail lobes, and the plasma sheet. These regions differ in solar radiation and plasma condition and one could expect various interaction may happen between the Moon and the impinging plasma. In this thesis, we focused on the solar wind interaction with the dayside lunar surface because the Moon spends most of its time in the solar wind. We refer interesting reader to other literature \citep{haradaInteractionsEarthMagnetotail2015} to understand the interactions of Earth's magnetotail plasma and the Moon.
+
+
+\subsection{Global Plasma Interaction with the Moon}
+
+To the first approximation, the impinging solar wind is completely absorbed by the Moon. No bow shock is observed in the upstream region \citep{nessEarlyResultsMagnetic1967} while a nearly complete void region is formed behind the Moon because of the removal of solar wind plasma. This downstream region is called the lunar wake first observed by Explorer missions in the 1960s. As the supersonic solar wind passes the the Moon, they begin to refill this tenuous region, generating many interesting phenomena. Enhanced magnetic fields is observed in the wake region as well as reduced magnetic field in the wake boundary. Theoretical models \citep{whangTheoreticalStudyMagnetic1968} have successfully explained these magnetic signatures in terms of current systems. Another characteristic feature of the lunar wake, namely ambipolar electric fields, is revealed by several spacecrafts in the 1990s. This electrostatic potential drop can be explained by charge separation where lighter faster electrons expanding into the wake ahead of heavier slower ions. This ambipolar electric field decelerate electrons and accelerates ions in the expansion region, leading to a modified velocity distribution of the solar wind particles. In return, a wealth of electrostatic and electromagnetic waves can be observed \citep{nakagawaGEOTAILObservationUpstream2003}.
+
+The first order approximation does not hold true above regions with strong local magnetic field. Observation revealed that the portion of reflected ions can increase up to 50\% \citep{lueStrongInfluenceLunar2011}. In addition to that, heavier ions can be generated due to the bombardment of energetic particles through processes such as sputtering and scattering. All these ions may propagate towards the downstream regions because of their large gyro-radius, complicating the whole processes in the lunar wake. Classification of the solar wind protons have been explored by \cite{nishinoSolarwindProtonAccess2009}, and more future works can help pave our way towards a complete understanding of the global Moon-solar wind interaction.
+
+
+\subsection{Near-Surface Plasma Interaction}
+
+The Moon is a natural laboratory to investigate surface-plasma interaction and many fundamental physics processes like surface charging and surface weathering. This section serves as a brief introduction to the abundance of interesting phenomena happening near the surface.
+
+\subsubsection{Surface charging}
+
+Surfaces of a body charges to a certain potential as observed by spacecrafts in the Earth's magnetosphere and interplanetary space. The Moon is no exception. This potential is determined by a balance between different charing currents, depending on the properties of the local plasma and radiation electromagnetic field. For a perfect conductive body, the current balance should hold globally. The Moon, however, has low enough surface conductivity \citep{pingLunarSurfaceElectrical2017} and this current balance (including plasma currents from electrons and ions, photoelectron currents generated by solar photons, and secondary electron emission from both electron and ion impact, see \cite{whipplePotentialsSurfacesSpace1981}) need only hold locally for currents. In darkness, the electrical conductivity ranges from $10^{14}$ S/m for lunar soils to $10^9$ S/m for lunar rocks and electron thermal flux dominates, charging the surface negative to values on the order of the electron temperature But upon irradiation with sunlight, there is $a > 10^6$ increase in electrical conductivity in both lunar soils and rocks and photoemission should generally provide the largest current source charging the surface to positive potentials on the order of the photoelectron temperature (a few eV). The large electrical conductivity change with visible and UV irradiation, combined with the low electrical conductivity of lunar materials, is responsible for the fact that lunar materials are readily chargeable and will remain electrically charged for long periods of time.
+
+\subsubsection{Photoemission}
+
+Photoemission is an especially important process on the dayside of the lunar surface. Incident photons with energies above the work function of the surface material can cause photoelectron emission. The work function of the lunar regolith was experimentally studied and determined to be 5 eV \citep{feuerbacherPhotoemissionLunarSurface1972}. Typically, the photoemission yield, defined as the number of emitted photoelectrons per incident photon, peaks at ~10-20 eV, which is in the ultraviolet (UV) and extreme ultraviolet (EUV) ranges.
+
+Photoemission dominates the sunlit-side charging environment and creates a photoelectron sheath above the lunar surface. Note that the plasma sheath may make the nearsurface plasma behave like a conductor, although the regolith material itself is insulating. These photoelectrons provide a particularly useful diagnostic tool for observations of the surface interaction, since they must pass through any magnetic gradient or potential drop above the surface before reaching the spacecraft. Given that photoelectrons should start with a relatively low characteristic temperature of a few eV, one can often determine many of the characteristics of both the magnetic and electric field configuration below the spacecraft by measuring these surface generated electrons. Using a one-dimensional particle-in-cell (PIC) code, \cite{poppeSimulationsPhotoelectronSheath2010} have further investigated and simulated the dusty plasma environment above the lunar surface.
+
+
+\subsection{Lunar upstream region (observation of particles and waves)}
+
+In the zero-order classical picture of the Moon-solar wind interaction, the Moon absorbed all the impinging plasma, having no impact on the upstream region. However, this over-simplifying assumption misses many interesting physical processes that occur around the lunar surface, especially in the LMAs regions. Recent observations from a number of spacecrafts revealed a much more fascinating scenario: plasma waves fill in the void of the Moon and modified particle distribution are detected in the near-lunar environment. They section serves to present an brief introduction to the various particles populations and waves observed on the upstream regions. A  thorough review has been given by \cite{haradaUpstreamWavesParticles2016}. They have clarified, organized and outlined multiple categories of waves and particles as well as the properties and generation mechanisms of these waves in association with the lunar upstream particle distributions.
+
+
+\subsubsection{Upstream particles at the Moon}
+
+The moon modifies the solar wind component and its distribution function by the absorption of the ambient particles hitting the lunar surface and the generation of charged particles. These deformed distributions feature a departure from the equilibrium state, thus able to trigger plasma instabilities and plasma waves.
+
+The most important population is the reflected ions. \cite{saitoInflightPerformanceInitial2010} identify this population using MAgnetic field and Plasma experiment and Plasma energy Angle and Composition Experiment (MAP-PACE) on SELENE (Kaguya). These ions are observed to reflect over a wide range of angles larger than the area of magnetic enhancement, with a higher temperature and a lower bulk flow velocity than the incident ones \citep{saitoSimultaneousObservationElectron2012}. \cite{lueStrongInfluenceLunar2011} map the global proton fluxes and find that the fraction of deflected protons can rise to to 50\% (10\% in average) over the large scale regions of lunar magnetic anomalies. Upward electric fields which are generated by the charge separation between ions and electrons are suggested to play an important role in reflecting the inpinging ions \citep{jarvinenVerticalElectricFields2014}. This population are closely associated with lunar magnetic anomalies so we will use the term “reflected” to describe ions that do not strike the surface. 
+
+Another important population over regions with weak or no magnetic anomalies is the backscattered protons. When ambient ions bombard the lunar surface, they will collide with scattering centers in the surface material. Some may lose substantial energy and could be trapped in the surface material, whereas others will be backscattered out of the surface into space, either positively/negatively charged or as neutral particles.
+
+
+\subsubsection{Upstream waves at the Moon}
+
+A variety of classes of lunar upstream waves have been observed with frequency starting from ultra-low-frequency (~0.01-0.1 Hz) moving up to high frequency Langmuir waves (>10 kHz).
+
+
+\section{Neutral particle environment around the Moon}
+
+Our understanding about the neutral particles around the Moon has been greatly advance in recent years attributing to new equipments such as the energetic neutral atom (ENA) sensor onboard Chandrayaan-1. Though the solar wind mainly consists of plasma, charged particles like protons and electrons​, neutral particles could be generated by the direct solar wind interaction with the lunar surface / regolith due to the absence of a global magnetosphere and atmosphere. Neutral particles are not affected by the electromagnetic field, therefore they can carry value information from the low attitude without distortion. From the measurement of the backscattered neutral particles, we can infer a lot about the detailed physical processes of the interaction. One important result of ENA observations is the discovery of “mini-magnetosphere” over the Crisium magnetic anomaly region \citep{wieserFirstObservationMinimagnetosphere2010}.
+
+\section{Lunar magnetic anomaly}
+
+Lunar magnetic anomalies which are small spatially strong magnetic fields on the Moon add another layer of complexity to the Moon-plasma interaction. LMAs are detected and measured first by magnetometers on the Apollo missions, and more recently by electron reflectometer on Lunar Prospector \citep{mitchellGlobalMappingLunar2008} and Kaguya (SELENE) \citep{hoodNewLargeScaleMap2021}. These magnetic anomalies diverse in the scale and field strengths: some of these anomalies probably range up to hundred kilometers (km) in size and have surface fields up to thousand nanoTeslas (nT). But their sizes are still small compared to the lunar radius (1,737.5 kilometers) and fields at orbital altitudes are typically no more than 5 or 10 nT. Major science interests in lunar magnetic anomalies include investigating the origin of magnetic anomalies and its relation with the lunar swirls \citep{hoodLunarMagneticAnomalies2021}. One possible mechanism for the formation of lunar swirls states that LMAs deflect or reflect the incident solar wind and may affect the space weathering of the lunar surface \citep{poppeParticleincellSimulationsSolar2012}.
+
+Unlike other areas on the Moon, lunar magnetic anomalies interact with the incoming solar wind in a significant manner and introduce plasma and field perturbations in the solar wind upstream region. By characterizing and mapping the reflected solar wind protons, \citep{lueStrongInfluenceLunar2011} found a strong correlation between the locations of magnetic anomalies and the proton fluxes. And they estimated that up to ~50 \% of more of the solar wind is reflected at the most effective magnetic anomalies; ~10 \% as an average number over the observed magnetic anomalies. Protons reflected by lunar crustal magnetic fields have effects on both local and global lunar plasma environment \citep{fatemiEffectsProtonsReflected2014}.
+
+
+% \subsection{二级节标题}
+
+% \subsubsection{三级节标题}
+
+% \paragraph{四级节标题}
+
+% \subparagraph{五级节标题}
+
+% 本模板 \pkg{ustcthesis} 是中国科学技术大学本科生和研究生学位论文的 \LaTeX{}
+% 模板， 按照《\href{https://gradschool.ustc.edu.cn/static/upload/article/picture/ce3b02e5f0274c90b9331ef50ae1ac26.pdf}
+% {中国科学技术大学研究生学位论文撰写手册}》（以下简称《撰写手册》）和
+% 《\href{https://www.teach.ustc.edu.cn/?attachment_id=13867}
+% {中国科学技术大学本科毕业论文（设计）格式}》的要求编写。
+
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+% incididunt ut labore et dolore magna aliqua.
+% Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+% aliquip ex ea commodo consequat.
+% Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+% fugiat nulla pariatur.
+% Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+% deserunt mollit anim id est laborum.
+
+
+
+% \section{脚注}
+
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+% incididunt ut labore et dolore magna aliqua.
+% \footnote{Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+%   nisi ut aliquip ex ea commodo consequat.
+%   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+%   eu fugiat nulla pariatur.}
